@@ -70,23 +70,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-
-ImmortalScrewdriver/Assets/ArtisanDream.Tools
-
-ImmortalScrewdriver/Assets/ArtisanDream.Tools.meta
-
-*.png
-
-*.fbx
-
-ImmortalScrewdriver/user.keystore
-
-*.jpg
-
-*.ttf
-
-*.psd
-
-*.pdf
-
-*.wav
