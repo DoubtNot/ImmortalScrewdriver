@@ -8,6 +8,12 @@ public class HandOnWallTrigger : MonoBehaviour
     public GameObject objectToActivate; // The GameObject to activate/deactivate
     public MonoBehaviour scriptToToggle; // The script component to enable/disable
 
+    public GameObject leftHand;
+    public GameObject rightHand;
+
+    public InputActionReference leftFlyInputAction; // Input action for left hand fly
+    public InputActionReference rightFlyInputAction; // Input action for right hand fly
+
     private bool isGrabbing = false; // Tracks if the grip button is pressed
     private bool isCollidingWithGrabObject = false; // Tracks if the hand is colliding with a "Grab" object
     private bool hasEnteredTrigger = false; // Tracks if the hand has entered the trigger
@@ -35,6 +41,13 @@ public class HandOnWallTrigger : MonoBehaviour
             flyScript.ResumeMovementWithDirection(directionToHead); // Move in that direction
             objectToActivate.SetActive(false); // Deactivate the object
             scriptToToggle.enabled = true; // Enable the specified script
+        }
+        else if(leftFlyInputAction.action.triggered || rightFlyInputAction.action.triggered)
+        {
+            flyScript.ResumeMovement(); // Resume flying if fly input is activated
+            objectToActivate.SetActive(true); // Activate the object
+            scriptToToggle.enabled = true; // Enable the specified script
+
         }
     }
 
