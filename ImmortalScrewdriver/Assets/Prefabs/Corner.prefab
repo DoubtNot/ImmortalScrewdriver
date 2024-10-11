@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8459962307961681397}
   - component: {fileID: 7183720597321206561}
   - component: {fileID: 5460563016227165681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 3815495959293368718}
   - component: {fileID: 3807714763261100329}
   - component: {fileID: 2216679793646441}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 3813778282385068376}
   - component: {fileID: 7991213851332835420}
   - component: {fileID: 5365332522964211207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 5997921198412692087}
   - component: {fileID: 2546654948395270063}
   - component: {fileID: 8661472379796031886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 2691759972441485999}
   - component: {fileID: 6667439737355910869}
   - component: {fileID: 8007788866185666250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 2840422814154210846}
   - component: {fileID: 3285109069717272123}
   - component: {fileID: 5967411426451502617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 8059115053077574164}
   - component: {fileID: 7914188559259741498}
   - component: {fileID: 1366019489791718053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 7861487910243302906}
   - component: {fileID: 4821066975257284742}
   - component: {fileID: 6036923584136817196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,9 +888,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: af44004f8579f5c4e870ad198f220d03, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4b25e765e527e44597195b54462575d, type: 2}
     - target: {fileID: 919132149155446097, guid: af44004f8579f5c4e870ad198f220d03, type: 3}
       propertyPath: m_Name
       value: Corner
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: af44004f8579f5c4e870ad198f220d03, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: af44004f8579f5c4e870ad198f220d03, type: 3}
       propertyPath: m_TagString
