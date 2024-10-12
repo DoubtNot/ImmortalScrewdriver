@@ -7,6 +7,8 @@ public class FlyVR : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
 
+    public GameObject objectToDisableWhenFlying; // Object to disable when flying
+
     public InputActionReference leftFlyInputAction;
     public InputActionReference rightFlyInputAction;
     public InputActionReference leftSecondaryButtonAction;
@@ -61,6 +63,12 @@ public class FlyVR : MonoBehaviour
         }
 
         Move();
+
+        // Disable object when flying, enable when not flying
+        if (isLeftFlying || isRightFlying)
+        {
+            objectToDisableWhenFlying.SetActive(false); // Disable the object when flying
+        }
     }
 
     void HandleFlying(InputActionReference flyInputAction, GameObject hand, ref bool isFlying, ref Vector3 lastFlyingDirection)
