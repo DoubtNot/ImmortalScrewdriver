@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ChargeLight : MonoBehaviour
 {
-    public float spinSpeed = 20f; // Speed of free spinning along the Y-axis
+    public float spinSpeed = 20f; // Speed of free spinning along the Z-axis
     public float spinIncreaseAmount = 100f; // Amount to increase spin speed on collision
     public float spinDecayRate = 25f; // Amount to reduce spin speed every second
     public float maxSpinSpeed = 1000f; // Maximum spin speed
@@ -10,7 +10,10 @@ public class ChargeLight : MonoBehaviour
     public Light spotlight; // Reference to the Light component
     public float maxLightRange = 60f; // Maximum range of the spotlight
     public float minLightRange = 10f; // Minimum range of the spotlight
+    public float maxLightIntensity = 0.6f; // Maximum light intensity
+    public float minLightIntensity = 0.2f; // Minimum light intensity
     public float rangeChangeSpeed = 5f; // Speed of light range change
+    public float intensityChangeSpeed = 5f; // Speed of light intensity change
 
     private Rigidbody rb;
 
@@ -23,8 +26,8 @@ public class ChargeLight : MonoBehaviour
 
     void Update()
     {
-        // Spin freely along the Y-axis
-        transform.Rotate(0, spinSpeed * Time.deltaTime, 0);
+        // Spin freely along the negative Z-axis
+        transform.Rotate(0, 0, -spinSpeed * Time.deltaTime);
 
         // Gradually decrease the spin speed over time
         if (spinSpeed > minSpinSpeed)
@@ -42,10 +45,14 @@ public class ChargeLight : MonoBehaviour
         float normalizedSpinSpeed = (spinSpeed - minSpinSpeed) / (maxSpinSpeed - minSpinSpeed);
         float targetLightRange = Mathf.Lerp(minLightRange, maxLightRange, normalizedSpinSpeed);
 
+        // Calculate the target light intensity based on the current spin speed
+        float targetLightIntensity = Mathf.Lerp(minLightIntensity, maxLightIntensity, normalizedSpinSpeed);
+
         // Smoothly adjust the light range towards the target
         if (spotlight != null)
         {
             spotlight.range = Mathf.Lerp(spotlight.range, targetLightRange, rangeChangeSpeed * Time.deltaTime);
+            spotlight.intensity = Mathf.Lerp(spotlight.intensity, targetLightIntensity, intensityChangeSpeed * Time.deltaTime);
         }
     }
 
