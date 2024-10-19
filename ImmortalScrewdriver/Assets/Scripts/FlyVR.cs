@@ -134,8 +134,8 @@ public class FlyVR : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check for objects with which the player collides
-        if (collision.gameObject.CompareTag("Grab")) // Make sure objects you want to bounce off are tagged
+        // Check if the player collides with "Grab" or "ColliderWalls" tagged objects
+        if (collision.gameObject.CompareTag("Grab") || collision.gameObject.CompareTag("ColliderWalls"))
         {
             // Only allow the player's body to bounce off if they are not grabbing
             if (!isMovementStopped)
@@ -145,6 +145,7 @@ public class FlyVR : MonoBehaviour
             }
         }
     }
+
 
     public void StopMovement() // Method to stop movement, callable from HandTrigger
     {
