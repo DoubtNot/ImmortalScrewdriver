@@ -11,6 +11,7 @@ TagManager:
   - Grab
   - PointerFinger
   - ColliderWalls
+  - Cassette
   layers:
   - Default
   - TransparentFX

@@ -781,6 +781,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Select Index",
+                    "type": "Button",
+                    "id": "26762a95-c78e-49db-93df-84d4e3475731",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -946,6 +955,17 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "Generic XR Controller",
                     "action": "Scale Delta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd19176f-7d4b-442b-a4a2-a90f510ce4a6",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Index",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1626,6 +1646,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Select Index",
+                    "type": "Button",
+                    "id": "41c685a2-2d1f-4931-90cc-eb76a0cdc7ae",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1802,6 +1831,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "IndexPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a67e4cdd-8809-4166-bb7b-22d3c3319957",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select Index",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
