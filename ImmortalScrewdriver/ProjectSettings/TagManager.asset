@@ -12,6 +12,8 @@ TagManager:
   - PointerFinger
   - ColliderWalls
   - Cassette
+  - ShuttleLight
+  - ShuttleDoorHandle
   layers:
   - Default
   - TransparentFX
