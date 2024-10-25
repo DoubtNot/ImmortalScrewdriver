@@ -17,6 +17,8 @@ TagManager:
   - ShuttleSteeringBar
   - ShuttleSteeringWheel
   - ShuttleKeyboard
+  - ShuttlePower1
+  - ShuttlePower2
   layers:
   - Default
   - TransparentFX
