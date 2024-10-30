@@ -19,6 +19,7 @@ TagManager:
   - ShuttleKeyboard
   - ShuttlePower1
   - ShuttlePower2
+  - Hold
   layers:
   - Default
   - TransparentFX
