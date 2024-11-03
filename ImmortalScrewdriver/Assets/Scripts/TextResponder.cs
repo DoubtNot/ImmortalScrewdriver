@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class PlaytimeData
@@ -13,9 +14,22 @@ public class TextResponder : MonoBehaviour
     public TextMeshProUGUI inputTextField;  // Reference to the input text field
     public TextMeshProUGUI outputTextField; // Reference to the output text field
 
+    // References to specific GameObjects to activate
+    public GameObject PathBeds;
+    public GameObject PathEscapePod;
+    public GameObject PathEastDome;
+    public GameObject PathLounge;
+    public GameObject PathLab;
+    public GameObject PathKitchen;
+    public GameObject PathMedBay;
+    public GameObject PathStorage;
+    public GameObject PathWestDome;
+
+
+    private Dictionary<string, GameObject> pathGameObjects; // Dictionary to map commands to GameObjects
+
     private float startTime; // Store the start time of the game
     private float totalPlaytime; // Store the total playtime
-
     private string playtimeFilePath; // Path to save the playtime data
 
     private void Start()
@@ -28,6 +42,20 @@ public class TextResponder : MonoBehaviour
 
         // Initialize the start time when the game starts
         startTime = Time.time;
+
+        // Initialize the dictionary with command strings and GameObjects
+        pathGameObjects = new Dictionary<string, GameObject>
+        {
+            { "path beds", PathBeds },
+            { "path escape pod", PathEscapePod},
+            { "path east dome", PathEastDome},
+            { "path lounge", PathLounge },
+            { "path lab", PathLab },
+            { "path kitchen", PathKitchen },
+            { "path med bay", PathMedBay },
+            { "path storage", PathStorage },
+            { "path west dome", PathWestDome }
+        };
     }
 
     private void OnApplicationQuit()
@@ -38,153 +66,118 @@ public class TextResponder : MonoBehaviour
     // Call this method, e.g., on a button click to evaluate the input text
     public void RespondToInput()
     {
-        Debug.Log("RespondToInput() function called."); // Debug log to check function call
+        string inputText = inputTextField.text.Trim().ToLower(); // Read and trim input text
 
-        outputTextField.text = "test test test";
-
-        string inputText = inputTextField.text.Trim(); // Read and trim input text
-
-        // Evaluate the input text and output a response
-        switch (inputText.ToLower())
+        // Deactivate all path GameObjects
+        foreach (var go in pathGameObjects.Values)
         {
-            case "frog":
-                outputTextField.text = @"
-                  @..@
-                 (----)
-                ( >__< )
-                 ^^  ^^";
-                break;
+            go.SetActive(false);
+        }
 
-            case "hello":
-                outputTextField.text = "Hi there! How can I help you today?";
-                break;
+        // Check if the input matches a path command and activate the specific GameObject
+        if (pathGameObjects.TryGetValue(inputText, out GameObject activeGameObject))
+        {
+            activeGameObject.SetActive(true);
+            outputTextField.text = $"Activated {inputText}";
+        }
+        else
+        {
+            // Evaluate the input text and output a response
+            switch (inputText)
+            {
+                case "frog":
+                    outputTextField.text = @"
+                      @..@
+                     (----)
+                    ( >__< )
+                     ^^  ^^";
+                    break;
 
-            // CMDS basic commands
-            case "cmds":
-                outputTextField.text = "C:Users/Owner>CMDS \n" +
-                    "CMDS \t\tDisplays a list of available commands \n" +
-                    "HELP \t\tProvides general instructions for using commands \n" +
-                    "PATH \t\tDisplays or sets a search path for existing rooms \n" +
-                    "RECOVER \tRecovers data from a bad or defective disk \n" +
-                    "ROOMLIST \tDisplays a list of the common rooms \n" +
-                    "START \t\tStarts a new session for scene.initialescape.apk \n" +
-                    "TASKLIST \t\tDisplays a list of all tasks \n" +
-                    "TIME \t\tDisplays the system time \n" +
-                    "QUIT \t\tEnds and saves current session";
-                break;
+                case "hello":
+                    outputTextField.text = "Hi there! How can I help you today?";
+                    break;
 
-            case "help":
-                outputTextField.text = "C:Users/Owner>HELP \n" +
-                    "<MISSING COMMAND NAME> \n\n" +
-                    "For a list of available command names type 'CMDS'";
-                break;
+                // CMDS basic commands
+                case "cmds":
+                    outputTextField.text = "C:Users/Owner>CMDS \n" +
+                        "CMDS \t\tDisplays a list of available commands \n" +
+                        "HELP \t\tProvides general instructions for using commands \n" +
+                        "PATH \t\tDisplays or sets a search path for existing rooms \n" +
+                        "RECOVER \tRecovers data from a bad or defective disk \n" +
+                        "ROOMLIST \tDisplays a list of the common rooms \n" +
+                        "START \t\tStarts a new session for scene.initialescape.apk \n" +
+                        "TASKLIST \t\tDisplays a list of all tasks \n" +
+                        "TIME \t\tDisplays the system time \n" +
+                        "QUIT \t\tEnds and saves current session";
+                    break;
 
-            case "path":
-                outputTextField.text = "C:Users/Owner>PATH \n" +
-                    "<MISSING ROOM NAME> \n\n" +
-                    "To use the PATH command type 'PATH [room-name]' \n\n" +
-                    "For a list of available room names type ROOMLIST";
-                break;
+                case "help":
+                    outputTextField.text = "C:Users/Owner>HELP \n" +
+                        "<MISSING COMMAND NAME> \n\n" +
+                        "For a list of available command names type 'CMDS'";
+                    break;
 
-            case "recover":
-                outputTextField.text = "C:Users/Owner>RECOVER \n" +
-                    "<MISSING FILE NAME> \n\n" +
-                    "To use the RECOVER command type 'RECOVER [file-name]' \n\n" +
-                    "For more information regarding the RECOVER command type 'HELP RECOVER'";
-                break;
+                case "path":
+                    outputTextField.text = "C:Users/Owner>PATH \n" +
+                        "<MISSING ROOM NAME> \n\n" +
+                        "To use the PATH command type 'PATH [room-name]' \n\n" +
+                        "For a list of available room names type ROOMLIST";
+                    break;
 
-            case "roomlist":
-                outputTextField.text = "C:/Users/Owner>ROOMLIST \n" +
-                    "BEDS \n" +
-                    "EAST DOME \n" +
-                    "ESCAPE POD \n" +
-                    "KITCHEN \n" +
-                    "LABORATORY \n" +
-                    "LOUNGE \n" +
-                    "MEDICAL BAY \n" +
-                    "STORAGE \n" +
-                    "WEST DOME";
-                break;
+                case "recover":
+                    outputTextField.text = "C:Users/Owner>RECOVER \n" +
+                        "<MISSING FILE NAME> \n\n" +
+                        "To use the RECOVER command type 'RECOVER [file-name]' \n\n" +
+                        "For more information regarding the RECOVER command type 'HELP RECOVER'";
+                    break;
 
-            case "start":
-                outputTextField.text = "C:Users/Owner>START \n" +
-                    "This command cannot be called in this location";
-                break;
+                case "roomlist":
+                    outputTextField.text = "C:/Users/Owner>ROOMLIST \n" +
+                        "BEDS \n" +
+                        "EAST DOME \n" +
+                        "ESCAPE POD \n" +
+                        "KITCHEN \n" +
+                        "LABORATORY \n" +
+                        "LOUNGE \n" +
+                        "MEDICAL BAY \n" +
+                        "STORAGE \n" +
+                        "WEST DOME";
+                    break;
 
-            case "tasklist":
-                outputTextField.text = "C:Users/Owner>TASKLIST \n" +
-                    "Repair Escape Pod\n" +
-                    "\t-Steering Rod\n" +
-                    "\tSteering Wheel\n" +
-                    "\tDoor Handle\n" +
-                    "\tKeyboard\n" +
-                    "\tPower Cell * 2\n" +
-                    "Recover Files * 0"; // Change the number for however many videos can be recovered
-                break;
+                case "start":
+                    outputTextField.text = "C:Users/Owner>START \n" +
+                        "This command cannot be called in this location";
+                    break;
 
-            case "time":
-                // Calculate elapsed time since the game started
-                float elapsedTime = Time.time - startTime + totalPlaytime; // Add total playtime from previous sessions
-                int minutes = Mathf.FloorToInt(elapsedTime / 60);
-                int seconds = Mathf.FloorToInt(elapsedTime % 60);
-                outputTextField.text = $"C:Users/Owner>TIME \n" +
-                                       $"Play Time: {minutes}m {seconds}s";
-                break;
+                case "tasklist":
+                    outputTextField.text = "C:Users/Owner>TASKLIST \n" +
+                        "Repair Escape Pod\n" +
+                        "\t-Steering Rod\n" +
+                        "\tSteering Wheel\n" +
+                        "\tDoor Handle\n" +
+                        "\tKeyboard\n" +
+                        "\tPower Cell * 2\n" +
+                        "Recover Files * 0"; // Change the number for however many files can be recovered
+                    break;
 
-            case "quit":
-                Application.Quit(); // Add a save function here
-                break;
+                case "time":
+                    // Calculate elapsed time since the game started
+                    float elapsedTime = Time.time - startTime + totalPlaytime; // Add total playtime from previous sessions
+                    int minutes = Mathf.FloorToInt(elapsedTime / 60);
+                    int seconds = Mathf.FloorToInt(elapsedTime % 60);
+                    outputTextField.text = $"C:Users/Owner>TIME \n" +
+                                           $"Play Time: {minutes}m {seconds}s";
+                    break;
 
-            // HELP commands 
-            case "help cmds":
-                outputTextField.text = "C:/Users/Owner>HELP CMDS \n" +
-                    "CMDS \t\tThis command will display a list of the most commonly used command names along with a brief description for each";
-                break;
+                case "quit":
+                    Application.Quit(); // Add a save function here if needed
+                    break;
 
-            case "help path":
-                outputTextField.text = "C:/Users/Owner>HELP PATH \n" +
-                    "PATH \t\tThis command requires a target room name \n\n" +
-                    "To use this command type 'PATH [room-name]' \n\n" +
-                    "For a list of available room names type ROOMLIST";
-                break;
-
-            case "help recover":
-                outputTextField.text = "C:Users/Owner>HELP RECOVER \n" +
-                    "";
-                break;
-
-            case "help roomlist":
-                outputTextField.text = "C:Users/Owner>HELP ROOMLIST \n" +
-                    "";
-                break;
-
-            case "help start":
-                outputTextField.text = "C:Users/Owner>HELP START \n" +
-                    "";
-                break;
-
-            case "help tasklist":
-                outputTextField.text = "C:Users/Owner>HELP TASKLIST \n" +
-                    "";
-                break;
-
-            case "help time":
-                outputTextField.text = "C:Users/Owner>HELP TIME \n" +
-                    "";
-                break;
-
-            case "help quit":
-                outputTextField.text = "C:Users/Owner>HELP QUIT \n" +
-                    "";
-                break;
-
-            // Add more cases as needed
-
-            // ERROR message
-            default:
-                outputTextField.text = "C:/Users/Owner>ERROR \n" +
-                    "The provided input is not recognized as an internal command, operable path or recovered file";
-                break;
+                default:
+                    outputTextField.text = "C:/Users/Owner>ERROR \n" +
+                        "The provided input is not recognized as an internal command, operable path or recovered file.";
+                    break;
+            }
         }
 
         // Clear the input text field after processing
