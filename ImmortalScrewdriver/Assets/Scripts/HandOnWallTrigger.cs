@@ -52,7 +52,7 @@ public class HandOnWallTrigger : MonoBehaviour
         }
         else if (isCollidingWithHoldObject && !isGrabbing && hasEnteredTrigger) // Released while holding a "Hold" object
         {
-            flyScript.ResumeMovement(); // Simply resume movement without any directional propulsion
+            flyScript.StopMovement(); // Keep movement stopped when releasing a "Hold" object
             objectToActivate.SetActive(false); // Deactivate the object
             scriptToToggle.enabled = true; // Enable the specified script
         }
