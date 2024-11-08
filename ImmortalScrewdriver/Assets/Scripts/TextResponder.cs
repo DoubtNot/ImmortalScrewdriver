@@ -97,7 +97,13 @@ public class TextResponder : MonoBehaviour
                     outputTextField.text = "Hi there! How can I help you today?";
                     break;
 
+
+
+
                 // CMDS basic commands
+
+
+
                 case "cmds":
                     outputTextField.text = "C:Users/Owner>CMDS \n" +
                         "CMDS \t\tDisplays a list of available commands \n" +
@@ -153,10 +159,10 @@ public class TextResponder : MonoBehaviour
                     outputTextField.text = "C:Users/Owner>TASKLIST \n" +
                         "Repair Escape Pod\n" +
                         "\t-Steering Rod\n" +
-                        "\tSteering Wheel\n" +
-                        "\tDoor Handle\n" +
-                        "\tKeyboard\n" +
-                        "\tPower Cell * 2\n" +
+                        "\t-Steering Wheel\n" +
+                        "\t-Door Handle\n" +
+                        "\t-Keyboard\n" +
+                        "\t-Power Cell * 2\n" +
                         "Recover Files * 0"; // Change the number for however many files can be recovered
                     break;
 
@@ -173,12 +179,69 @@ public class TextResponder : MonoBehaviour
                     Application.Quit(); // Add a save function here if needed
                     break;
 
+
+
+
+                // HELP commands
+
+
+
+
+                case "help cmds":
+                    outputTextField.text = "C:/Users/Owner>HELP CMDS \n" +
+                        "CMDS \t\tThis command will display a list of the most commonly used command names along with a brief description for each";
+                    break;
+
+                case "help path":
+                    outputTextField.text = "C:/Users/Owner>HELP PATH \n" +
+                        "PATH \t\tThis command requires a target room name \n\n" +
+                        "To use this command type 'PATH [room-name]' \n\n" +
+                        "For a list of available room names type ROOMLIST";
+                    break;
+
+                case "help recover":
+                    outputTextField.text = "C:Users/Owner>HELP RECOVER \n" +
+                        "";
+                    break;
+
+                case "help roomlist":
+                    outputTextField.text = "C:Users/Owner>HELP ROOMLIST \n" +
+                        "";
+                    break;
+
+                case "help start":
+                    outputTextField.text = "C:Users/Owner>HELP START \n" +
+                        "";
+                    break;
+
+                case "help tasklist":
+                    outputTextField.text = "C:Users/Owner>HELP TASKLIST \n" +
+                        "";
+                    break;
+
+                case "help time":
+                    outputTextField.text = "C:Users/Owner>HELP TIME \n" +
+                        "";
+                    break;
+
+                case "help quit":
+                    outputTextField.text = "C:Users/Owner>HELP QUIT \n" +
+                        "";
+                    break;
+
+
+
+                // Error Message
                 default:
                     outputTextField.text = "C:/Users/Owner>ERROR \n" +
                         "The provided input is not recognized as an internal command, operable path or recovered file.";
                     break;
             }
         }
+
+
+
+
 
         // Clear the input text field after processing
         inputTextField.text = "";
