@@ -18,6 +18,7 @@ public class TextResponder : MonoBehaviour
     public GameObject PathBeds;
     public GameObject PathEscapePod;
     public GameObject PathEastDome;
+    public GameObject PathEye;
     public GameObject PathLounge;
     public GameObject PathLab;
     public GameObject PathKitchen;
@@ -49,6 +50,7 @@ public class TextResponder : MonoBehaviour
             { "path beds", PathBeds },
             { "path escape pod", PathEscapePod},
             { "path east dome", PathEastDome},
+            { "path eye", PathEye},
             { "path lounge", PathLounge },
             { "path lab", PathLab },
             { "path kitchen", PathKitchen },
@@ -85,21 +87,7 @@ public class TextResponder : MonoBehaviour
             // Evaluate the input text and output a response
             switch (inputText)
             {
-                case "frog":
-                    outputTextField.text = @"
-                      @..@
-                     (----)
-                    ( >__< )
-                     ^^  ^^";
-                    break;
-
-                case "hello":
-                    outputTextField.text = "Hi there! How can I help you today?";
-                    break;
-
-
-
-
+                
                 // CMDS basic commands
 
 
@@ -163,7 +151,7 @@ public class TextResponder : MonoBehaviour
                         "\t-Door Handle\n" +
                         "\t-Keyboard\n" +
                         "\t-Power Cell * 2\n" +
-                        "Recover Files * 0"; // Change the number for however many files can be recovered
+                        "Rec0vr FiIeZ * 0"; // Change the number for however many files can be recovered
                     break;
 
                 case "time":
@@ -201,39 +189,103 @@ public class TextResponder : MonoBehaviour
 
                 case "help recover":
                     outputTextField.text = "C:Users/Owner>HELP RECOVER \n" +
-                        "";
+                        "To use the RECOVER command type 'RECOVER [file-name]' \n\n" +
+                        "Currently there are no known files to be recovered";
                     break;
 
                 case "help roomlist":
                     outputTextField.text = "C:Users/Owner>HELP ROOMLIST \n" +
-                        "";
+                        "ROOMLIST \t\tUsing this command will display a list of all known room names in the space station";
                     break;
 
                 case "help start":
                     outputTextField.text = "C:Users/Owner>HELP START \n" +
-                        "";
+                        "START \t\tRequires the subject to be in the start location to use";
                     break;
 
                 case "help tasklist":
                     outputTextField.text = "C:Users/Owner>HELP TASKLIST \n" +
-                        "";
+                        "TASKLIST \t\tDisplays a list of objectives to complete in order to escape the space station";
                     break;
 
                 case "help time":
                     outputTextField.text = "C:Users/Owner>HELP TIME \n" +
-                        "";
+                        "TIME \t\tShows the total duration of currrent experiment";
                     break;
 
                 case "help quit":
                     outputTextField.text = "C:Users/Owner>HELP QUIT \n" +
-                        "";
+                        "QUIT \t\tSaves pertinant information of current itteration and closes the application";
+                    break;
+
+
+                // Silly messages
+
+
+                case "frog":
+                    outputTextField.text = @"
+                      @..@
+                     (----)
+                    ( >__< )
+                     ^^  ^^";
+                    break;
+
+                case "cat":
+                    outputTextField.text = @"
+                     /\_/\  
+                    ( o.o )
+                     > ^ <";
+                    break;
+
+                case "dog":
+                    outputTextField.text = @"
+                         / \__
+                        (    @\____
+                        /         O
+                       /   (_____/
+                      /_____/   U";
+                    break;
+
+                case "fish":
+                    outputTextField.text = @"
+                       ><(((('>
+                      ><(((('>";
+                    break;
+
+                case "duck":
+                    outputTextField.text = @"
+                          __
+                    <(o )___
+                     (  /     \
+                      `'\_(' ')>";
+                    break;
+
+                case "bunny":
+                    outputTextField.text = @"
+                     (\(\ 
+                    ( -.-)
+                    o_('')('')";
+                    break;
+
+                case "elephant":
+                    outputTextField.text = @"
+                      /  \~~~/  \
+                     (    ..     )
+                      \        /
+                       '-(  )----'
+                          \ \";
+                    break;
+
+                case "sixty nine":
+                    outputTextField.text = "C:Users/Owner>SIXTY NINE \n" +
+                        "Heh nice!";
                     break;
 
 
 
                 // Error Message
                 default:
-                    outputTextField.text = "C:/Users/Owner>ERROR \n" +
+                    outputTextField.text = "C:/Users/Owner>ERROR \n\n" +
                         "The provided input is not recognized as an internal command, operable path or recovered file.";
                     break;
             }

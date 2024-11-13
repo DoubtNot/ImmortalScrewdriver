@@ -4,10 +4,11 @@ using System.Collections;
 
 public class TextResponderMainMenu : MonoBehaviour
 {
-    public TextMeshProUGUI inputTextField;  // Reference to the input text field
-    public TextMeshProUGUI outputTextField; // Reference to the output text field
-    public Transform playerTransform;       // Reference to the player's Transform
-    public GameObject targetObject;         // Reference to the target GameObject
+    public TextMeshProUGUI inputTextField;   // Reference to the input text field
+    public TextMeshProUGUI outputTextField;  // Reference to the output text field
+    public Transform playerTransform;        // Reference to the player's Transform
+    public GameObject targetObject;          // Reference to the target GameObject
+    public GameObject lightObject;           // Reference to the light GameObject to activate
 
     // Call this method, e.g., on a button click to evaluate the input text
     public void RespondToInput()
@@ -36,6 +37,7 @@ public class TextResponderMainMenu : MonoBehaviour
     private IEnumerator MovePlayerAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
         if (playerTransform != null && targetObject != null)
         {
             playerTransform.position = targetObject.transform.position;      // Set the player's position to the target's position
@@ -44,6 +46,32 @@ public class TextResponderMainMenu : MonoBehaviour
         else
         {
             Debug.LogWarning("Player Transform or Target Object is not assigned.");
+        }
+
+        // Activate the light if it exists
+        if (lightObject != null)
+        {
+            lightObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Light object is not assigned.");
+        }
+
+        // Clear the output text field to make the UI go blank after completion
+        outputTextField.text = "";
+    }
+
+    // Public method to turn off the light, accessible by other scripts
+    public void TurnOffLight()
+    {
+        if (lightObject != null)
+        {
+            lightObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Light object is not assigned.");
         }
     }
 }
