@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class HandOnWallTrigger : MonoBehaviour
 {
     public FlyVR flyScript; // Reference to the FlyVR script
-    public InputActionReference gripInputAction; // Reference to the hand's grip input (left or right)
+    public InputActionReference indexTriggerInputAction; // Reference to the index trigger input (left or right)
     public GameObject objectToActivate; // The GameObject to activate/deactivate
     public MonoBehaviour scriptToToggle; // The script component to enable/disable
 
@@ -14,17 +14,17 @@ public class HandOnWallTrigger : MonoBehaviour
     public InputActionReference leftFlyInputAction; // Input action for left hand fly
     public InputActionReference rightFlyInputAction; // Input action for right hand fly
 
-    private bool isGrabbing = false; // Tracks if the grip button is pressed
+    private bool isGrabbing = false; // Tracks if the index trigger button is pressed
     private bool isCollidingWithGrabObject = false; // Tracks if the hand is colliding with a "Grab" object
     private bool isCollidingWithHoldObject = false; // Tracks if the hand is colliding with a "Hold" object
     private bool hasEnteredTrigger = false; // Tracks if the hand has entered the trigger
 
     void Update()
     {
-        // Check the status of the grip button
-        isGrabbing = gripInputAction.action.ReadValue<float>() > 0.1f;
+        // Check the status of the index trigger button
+        isGrabbing = indexTriggerInputAction.action.ReadValue<float>() > 0.1f;
 
-        // If the hand is colliding with a "Grab" object and the grip button is pressed
+        // If the hand is colliding with a "Grab" object and the index trigger button is pressed
         if (isCollidingWithGrabObject && isGrabbing)
         {
             flyScript.StopMovement(); // Stop movement when grabbing
@@ -34,7 +34,7 @@ public class HandOnWallTrigger : MonoBehaviour
         }
         else if (isCollidingWithGrabObject && !isGrabbing && hasEnteredTrigger) // Check if the trigger has been entered
         {
-            // Calculate the direction from the hand to the head when grip is released
+            // Calculate the direction from the hand to the head when the index trigger button is released
             Vector3 headPosition = Camera.main.transform.position; // Assuming the camera is the head
             Vector3 handPosition = transform.position; // Get the position of the hand
             Vector3 directionToHead = headPosition - handPosition; // Calculate the direction from the hand to the head

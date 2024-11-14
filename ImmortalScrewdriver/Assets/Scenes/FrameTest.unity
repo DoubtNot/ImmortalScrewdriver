@@ -10664,10 +10664,9 @@ MonoBehaviour:
   inputTextField: {fileID: 1015406426}
   outputTextField: {fileID: 1203936351}
   playerTransform: {fileID: 651655779}
-  startPositionPlayer: {fileID: 1650390294}
+  targetObject: {fileID: 1650390294}
   lightObject: {fileID: 1530757089}
   barrels: {fileID: 4950120886183224644}
-  startPositionScrewdriver: {fileID: 1710204676}
   deathScript: {fileID: 7279244545786829003}
   floatObject: {fileID: 7279244545786828999}
 --- !u!1001 &460529713
@@ -17790,7 +17789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyScript: {fileID: 651655785}
-  indexTriggerInputAction: {fileID: -3210521142249183659, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  gripInputAction: {fileID: 15759602096507913, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   objectToActivate: {fileID: 1426232858}
   scriptToToggle: {fileID: 651655783}
   leftHand: {fileID: 1454793051}
@@ -18438,7 +18437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flyScript: {fileID: 651655785}
-  indexTriggerInputAction: {fileID: 2059508388127767659, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  gripInputAction: {fileID: -3742484312079769484, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   objectToActivate: {fileID: 1426232858}
   scriptToToggle: {fileID: 651655783}
   leftHand: {fileID: 1454793051}
@@ -44872,37 +44871,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8019706734505945960, guid: 4eaf93b66a961754993d4ff5e003d20b, type: 3}
   m_PrefabInstance: {fileID: 1702721481}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1710204676
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1710204677}
-  m_Layer: 0
-  m_Name: ScrewdriverStartPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1710204677
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710204676}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 1.63, z: -21.65}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1715094734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60830,7 +60798,6 @@ SceneRoots:
   - {fileID: 651655779}
   - {fileID: 4950120886183224643}
   - {fileID: 1650390295}
-  - {fileID: 1710204677}
   - {fileID: 935546218}
   - {fileID: 1359305926}
   - {fileID: 250036540}

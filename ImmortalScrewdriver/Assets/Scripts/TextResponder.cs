@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class PlaytimeData
@@ -281,7 +282,10 @@ public class TextResponder : MonoBehaviour
                         "Heh nice!";
                     break;
 
-
+                case "test":
+                    outputTextField.text = "C:Users/Owner>FRAMETEST \n\nLoading FrameTest scene...";
+                    SceneManager.LoadScene("FrameTest"); // Load the FrameTest scene
+                    break;
 
                 // Error Message
                 default:

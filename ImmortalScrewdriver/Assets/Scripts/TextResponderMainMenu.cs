@@ -4,14 +4,15 @@ using System.Collections;
 
 public class TextResponderMainMenu : MonoBehaviour
 {
-    public TextMeshProUGUI inputTextField;   // Reference to the input text field
-    public TextMeshProUGUI outputTextField;  // Reference to the output text field
-    public Transform playerTransform;        // Reference to the player's Transform
-    public GameObject targetObject;          // Reference to the target GameObject
-    public GameObject lightObject;           // Reference to the light GameObject to activate
-    public GameObject barrels;               // Reference to the barrels GameObject
-    public Death deathScript;                // Reference to the Death script for controlling object activation
-    public ObjectFloatToPlayer floatObject;  // Reference to the ObjectFloatToPlayer script for resetting speed
+    public TextMeshProUGUI inputTextField;      // Reference to the input text field
+    public TextMeshProUGUI outputTextField;     // Reference to the output text field
+    public Transform playerTransform;           // Reference to the player's Transform
+    public GameObject startPositionPlayer;      // Reference to the player's start position GameObject
+    public GameObject lightObject;              // Reference to the light GameObject to activate
+    public GameObject barrels;                  // Reference to the barrels GameObject
+    public GameObject startPositionScrewdriver; // Reference to the start position GameObject for the floating object
+    public Death deathScript;                   // Reference to the Death script for controlling object activation
+    public ObjectFloatToPlayer floatObject;     // Reference to the ObjectFloatToPlayer script for resetting speed
 
     // Call this method, e.g., on a button click to evaluate the input text
     public void RespondToInput()
@@ -36,14 +37,16 @@ public class TextResponderMainMenu : MonoBehaviour
                     Debug.LogWarning("Death script reference is not assigned.");
                 }
 
-                // Reset the floating object's speed
-                if (floatObject != null)
+                // Reset the floating object's position, rotation, and speed
+                if (floatObject != null && startPositionScrewdriver != null)
                 {
+                    floatObject.transform.position = startPositionScrewdriver.transform.position;
+                    floatObject.transform.rotation = startPositionScrewdriver.transform.rotation;
                     floatObject.ResetSpeed();
                 }
                 else
                 {
-                    Debug.LogWarning("ObjectFloatToPlayer script reference is not assigned.");
+                    Debug.LogWarning("ObjectFloatToPlayer or start position reference is not assigned.");
                 }
                 break;
 
@@ -61,8 +64,8 @@ public class TextResponderMainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        playerTransform.position = targetObject.transform.position;      // Set the player's position to the target's position
-        playerTransform.rotation = targetObject.transform.rotation;      // Set the player's rotation to the target's rotation
+        playerTransform.position = startPositionPlayer.transform.position;      // Set the player's position to the start position
+        playerTransform.rotation = startPositionPlayer.transform.rotation;      // Set the player's rotation to the start position
 
         lightObject.SetActive(true);
         barrels.SetActive(true);
