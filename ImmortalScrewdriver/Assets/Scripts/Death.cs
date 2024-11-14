@@ -40,5 +40,28 @@ public class Death : MonoBehaviour
         {
             Debug.LogWarning("MainMenu reference is not assigned.");
         }
+
+        DisableObject();
+    }
+
+    // Detect collision with objects tagged "Respawn" to trigger death
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Respawn"))
+        {
+            ExecuteDeath();
+        }
+    }
+
+    // Method to disable the GameObject
+    public void DisableObject()
+    {
+        gameObject.SetActive(false);
+    }
+
+    // Method to enable the GameObject
+    public void EnableObject()
+    {
+        gameObject.SetActive(true);
     }
 }

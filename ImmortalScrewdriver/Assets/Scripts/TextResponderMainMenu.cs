@@ -9,6 +9,9 @@ public class TextResponderMainMenu : MonoBehaviour
     public Transform playerTransform;        // Reference to the player's Transform
     public GameObject targetObject;          // Reference to the target GameObject
     public GameObject lightObject;           // Reference to the light GameObject to activate
+    public GameObject barrels;               // Reference to the barrels GameObject
+    public Death deathScript;                // Reference to the Death script for controlling object activation
+    public ObjectFloatToPlayer floatObject;  // Reference to the ObjectFloatToPlayer script for resetting speed
 
     // Call this method, e.g., on a button click to evaluate the input text
     public void RespondToInput()
@@ -22,6 +25,26 @@ public class TextResponderMainMenu : MonoBehaviour
                 outputTextField.text = "C:/Users/Owner>START \n" +
                     "Initializing experiment, please wait...";
                 StartCoroutine(MovePlayerAfterDelay(3f)); // Move the player instead of loading a scene
+
+                // Enable the object through the Death script
+                if (deathScript != null)
+                {
+                    deathScript.EnableObject();
+                }
+                else
+                {
+                    Debug.LogWarning("Death script reference is not assigned.");
+                }
+
+                // Reset the floating object's speed
+                if (floatObject != null)
+                {
+                    floatObject.ResetSpeed();
+                }
+                else
+                {
+                    Debug.LogWarning("ObjectFloatToPlayer script reference is not assigned.");
+                }
                 break;
 
             default:
@@ -38,25 +61,11 @@ public class TextResponderMainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (playerTransform != null && targetObject != null)
-        {
-            playerTransform.position = targetObject.transform.position;      // Set the player's position to the target's position
-            playerTransform.rotation = targetObject.transform.rotation;      // Set the player's rotation to the target's rotation
-        }
-        else
-        {
-            Debug.LogWarning("Player Transform or Target Object is not assigned.");
-        }
+        playerTransform.position = targetObject.transform.position;      // Set the player's position to the target's position
+        playerTransform.rotation = targetObject.transform.rotation;      // Set the player's rotation to the target's rotation
 
-        // Activate the light if it exists
-        if (lightObject != null)
-        {
-            lightObject.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("Light object is not assigned.");
-        }
+        lightObject.SetActive(true);
+        barrels.SetActive(true);
 
         // Clear the output text field to make the UI go blank after completion
         outputTextField.text = "";

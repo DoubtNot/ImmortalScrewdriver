@@ -93,7 +93,7 @@ public class TextResponder : MonoBehaviour
 
 
                 case "cmds":
-                    outputTextField.text = "C:Users/Owner>CMDS \n" +
+                    outputTextField.text = "C:Users/Owner>CMDS \n\n" +
                         "CMDS \t\tDisplays a list of available commands \n" +
                         "HELP \t\tProvides general instructions for using commands \n" +
                         "PATH \t\tDisplays or sets a search path for existing rooms \n" +
@@ -106,27 +106,27 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "help":
-                    outputTextField.text = "C:Users/Owner>HELP \n" +
-                        "<MISSING COMMAND NAME> \n\n" +
-                        "For a list of available command names type 'CMDS'";
+                    outputTextField.text = "C:Users/Owner>HELP \n\n" +
+                        "The HELP command provides additional information/instructions on the specified command \n\n" +
+                        "To use the HELP command type 'HELP [command-name]' and hit Enter";
                     break;
 
                 case "path":
-                    outputTextField.text = "C:Users/Owner>PATH \n" +
+                    outputTextField.text = "C:Users/Owner>PATH \n\n" +
                         "<MISSING ROOM NAME> \n\n" +
                         "To use the PATH command type 'PATH [room-name]' \n\n" +
-                        "For a list of available room names type ROOMLIST";
+                        "For a list of available room names type ROOMLIST and hit Enter";
                     break;
 
                 case "recover":
-                    outputTextField.text = "C:Users/Owner>RECOVER \n" +
+                    outputTextField.text = "C:Users/Owner>RECOVER \n\n" +
                         "<MISSING FILE NAME> \n\n" +
                         "To use the RECOVER command type 'RECOVER [file-name]' \n\n" +
-                        "For more information regarding the RECOVER command type 'HELP RECOVER'";
+                        "For more information regarding the RECOVER command type 'HELP RECOVER' and hit Enter";
                     break;
 
                 case "roomlist":
-                    outputTextField.text = "C:/Users/Owner>ROOMLIST \n" +
+                    outputTextField.text = "C:/Users/Owner>ROOMLIST \n\n" +
                         "BEDS \n" +
                         "EAST DOME \n" +
                         "ESCAPE POD \n" +
@@ -139,12 +139,12 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "start":
-                    outputTextField.text = "C:Users/Owner>START \n" +
+                    outputTextField.text = "C:Users/Owner>START \n\n" +
                         "This command cannot be called in this location";
                     break;
 
                 case "tasklist":
-                    outputTextField.text = "C:Users/Owner>TASKLIST \n" +
+                    outputTextField.text = "C:Users/Owner>TASKLIST \n\n" +
                         "Repair Escape Pod\n" +
                         "\t-Steering Rod\n" +
                         "\t-Steering Wheel\n" +
@@ -159,7 +159,7 @@ public class TextResponder : MonoBehaviour
                     float elapsedTime = Time.time - startTime + totalPlaytime; // Add total playtime from previous sessions
                     int minutes = Mathf.FloorToInt(elapsedTime / 60);
                     int seconds = Mathf.FloorToInt(elapsedTime % 60);
-                    outputTextField.text = $"C:Users/Owner>TIME \n" +
+                    outputTextField.text = $"C:Users/Owner>TIME \n\n" +
                                            $"Play Time: {minutes}m {seconds}s";
                     break;
 
@@ -176,45 +176,45 @@ public class TextResponder : MonoBehaviour
 
 
                 case "help cmds":
-                    outputTextField.text = "C:/Users/Owner>HELP CMDS \n" +
+                    outputTextField.text = "C:/Users/Owner>HELP CMDS \n\n" +
                         "CMDS \t\tThis command will display a list of the most commonly used command names along with a brief description for each";
                     break;
 
                 case "help path":
-                    outputTextField.text = "C:/Users/Owner>HELP PATH \n" +
+                    outputTextField.text = "C:/Users/Owner>HELP PATH \n\n" +
                         "PATH \t\tThis command requires a target room name \n\n" +
                         "To use this command type 'PATH [room-name]' \n\n" +
-                        "For a list of available room names type ROOMLIST";
+                        "For a list of available room names type ROOMLIST and hit Enter";
                     break;
 
                 case "help recover":
-                    outputTextField.text = "C:Users/Owner>HELP RECOVER \n" +
+                    outputTextField.text = "C:Users/Owner>HELP RECOVER \n\n" +
                         "To use the RECOVER command type 'RECOVER [file-name]' \n\n" +
                         "Currently there are no known files to be recovered";
                     break;
 
                 case "help roomlist":
-                    outputTextField.text = "C:Users/Owner>HELP ROOMLIST \n" +
+                    outputTextField.text = "C:Users/Owner>HELP ROOMLIST \n\n" +
                         "ROOMLIST \t\tUsing this command will display a list of all known room names in the space station";
                     break;
 
                 case "help start":
-                    outputTextField.text = "C:Users/Owner>HELP START \n" +
+                    outputTextField.text = "C:Users/Owner>HELP START \n\n" +
                         "START \t\tRequires the subject to be in the start location to use";
                     break;
 
                 case "help tasklist":
-                    outputTextField.text = "C:Users/Owner>HELP TASKLIST \n" +
+                    outputTextField.text = "C:Users/Owner>HELP TASKLIST \n\n" +
                         "TASKLIST \t\tDisplays a list of objectives to complete in order to escape the space station";
                     break;
 
                 case "help time":
-                    outputTextField.text = "C:Users/Owner>HELP TIME \n" +
+                    outputTextField.text = "C:Users/Owner>HELP TIME \n\n" +
                         "TIME \t\tShows the total duration of currrent experiment";
                     break;
 
                 case "help quit":
-                    outputTextField.text = "C:Users/Owner>HELP QUIT \n" +
+                    outputTextField.text = "C:Users/Owner>HELP QUIT \n\n" +
                         "QUIT \t\tSaves pertinant information of current itteration and closes the application";
                     break;
 
@@ -277,7 +277,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "sixty nine":
-                    outputTextField.text = "C:Users/Owner>SIXTY NINE \n" +
+                    outputTextField.text = "C:Users/Owner>SIXTY NINE \n\n" +
                         "Heh nice!";
                     break;
 

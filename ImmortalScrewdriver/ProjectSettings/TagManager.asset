@@ -20,6 +20,7 @@ TagManager:
   - ShuttlePower1
   - ShuttlePower2
   - Hold
+  - Bullet
   layers:
   - Default
   - TransparentFX

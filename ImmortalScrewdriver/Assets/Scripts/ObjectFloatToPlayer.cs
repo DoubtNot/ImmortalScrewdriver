@@ -1,17 +1,20 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ObjectFloatToPlayer : MonoBehaviour
 {
     public Transform player; // Reference to the player
-    public float speed = 5f; // Speed of floating towards the player
+    public float speed = 0.5f; // Initial speed of floating towards the player
+    public float speedIncrement = 0.1f; // How much to increase the speed with each bullet collision
     public float bounceFactor = 0.7f; // How much the object bounces off walls
     public float distanceToStop = 0.1f; // Minimum distance before stopping
     public float audioPlayDistance = 10f; // Distance within which to play the audio clip
     public AudioClip audioClip; // Audio clip to play
     private AudioSource audioSource; // Audio source component
-
     private Rigidbody rb;
+    private bool isStopped = false; // To check if movement is currently stopped
+    private Coroutine stopMovementCoroutine; // Reference to the active coroutine
 
     void Start()
     {
@@ -26,6 +29,8 @@ public class ObjectFloatToPlayer : MonoBehaviour
 
     void Update()
     {
+        if (isStopped) return; // Skip movement logic if movement is stopped
+
         // Calculate the direction to the player
         Vector3 directionToPlayer = player.position - transform.position;
 
@@ -50,4 +55,30 @@ public class ObjectFloatToPlayer : MonoBehaviour
             audioSource.Play(); // Play the audio clip if within distance and not already playing
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collided object has the tag "Bullet"
+        if (collision.gameObject.CompareTag("Bullet") && stopMovementCoroutine == null)
+        {
+            // Start the coroutine to stop movement and prevent duplicates
+            stopMovementCoroutine = StartCoroutine(StopMovementTemporarily(5f));
+            speed += speedIncrement; // Increase speed by a small amount with each collision
+        }
+    }
+
+    private IEnumerator StopMovementTemporarily(float duration)
+    {
+        isStopped = true;
+        rb.velocity = Vector3.zero; // Stop movement immediately
+        yield return new WaitForSeconds(duration);
+        isStopped = false; // Resume movement after the delay
+        stopMovementCoroutine = null; // Reset coroutine reference, allowing new collisions to start it again
+    }
+
+    public void ResetSpeed()
+    {
+        speed = 0.5f; // Reset speed to its initial value
+    }
+
 }
