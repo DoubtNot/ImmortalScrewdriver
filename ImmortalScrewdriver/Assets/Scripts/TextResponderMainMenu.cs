@@ -9,7 +9,8 @@ public class TextResponderMainMenu : MonoBehaviour
     public Transform playerTransform;           // Reference to the player's Transform
     public GameObject startPositionPlayer;      // Reference to the player's start position GameObject
     public GameObject lightObject;              // Reference to the light GameObject to activate
-    public GameObject barrels;                  // Reference to the barrels GameObject
+    public GameObject blaster;                  // Reference to the barrels GameObject
+    public GameObject blasterCassette;
     public GameObject startPositionScrewdriver; // Reference to the start position GameObject for the floating object
     public Death deathScript;                   // Reference to the Death script for controlling object activation
     public ObjectFloatToPlayer floatObject;     // Reference to the ObjectFloatToPlayer script for resetting speed
@@ -68,7 +69,9 @@ public class TextResponderMainMenu : MonoBehaviour
         playerTransform.rotation = startPositionPlayer.transform.rotation;      // Set the player's rotation to the start position
 
         lightObject.SetActive(true);
-        barrels.SetActive(true);
+        blaster.SetActive(true);
+        blasterCassette.SetActive(true);
+
 
         // Clear the output text field to make the UI go blank after completion
         outputTextField.text = "";
