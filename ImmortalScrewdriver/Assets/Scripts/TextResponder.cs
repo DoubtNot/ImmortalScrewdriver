@@ -132,9 +132,9 @@ public class TextResponder : MonoBehaviour
                         "EAST DOME \n" +
                         "ESCAPE POD \n" +
                         "KITCHEN \n" +
-                        "LABORATORY \n" +
+                        "LAB \n" +
                         "LOUNGE \n" +
-                        "MEDICAL BAY \n" +
+                        "MED BAY \n" +
                         "STORAGE \n" +
                         "WEST DOME";
                     break;

@@ -16,7 +16,13 @@ public class CassettePlayer : MonoBehaviour
 
             if (cassetteAudio != null)
             {
-                // Assign the cassette's audio to the current audio reference
+                // Pause the currently playing cassette, if any
+                if (currentCassetteAudio != null && currentCassetteAudio.isPlaying)
+                {
+                    currentCassetteAudio.Pause();
+                }
+
+                // Assign the new cassette's audio
                 currentCassetteAudio = cassetteAudio;
             }
             else
@@ -28,7 +34,7 @@ public class CassettePlayer : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // Stop the audio if the exiting cassette is the current cassette
+        // Pause the audio if the exiting cassette is the current cassette
         if (other.CompareTag("Cassette") && currentCassetteAudio != null && other.GetComponent<AudioSource>() == currentCassetteAudio)
         {
             StopAudio();
@@ -45,7 +51,8 @@ public class CassettePlayer : MonoBehaviour
 
         if (cassetteTransform == null)
         {
-            Debug.LogWarning("No cassette detected as a child. Please insert a cassette to play audio.");
+            StopAudio();
+            currentCassetteAudio = null;
             return;
         }
 
@@ -54,14 +61,22 @@ public class CassettePlayer : MonoBehaviour
 
         if (currentCassetteAudio != null)
         {
-            if (!currentCassetteAudio.isPlaying) // Resume only if not already playing
+            if (currentCassetteAudio.isPlaying)
             {
+                // Already playing, reset to normal speed
+                currentCassetteAudio.pitch = 1.0f;
+            }
+            else if (currentCassetteAudio.time > 0f)
+            {
+                // Resume from paused state
                 currentCassetteAudio.pitch = 1.0f; // Normal speed
-                currentCassetteAudio.Play(); // Resume from the current time
+                currentCassetteAudio.UnPause();
             }
             else
             {
+                // Start playback from the beginning
                 currentCassetteAudio.pitch = 1.0f; // Normal speed
+                currentCassetteAudio.Play();
             }
         }
         else
@@ -74,7 +89,7 @@ public class CassettePlayer : MonoBehaviour
     {
         if (currentCassetteAudio != null)
         {
-            currentCassetteAudio.Stop();
+            currentCassetteAudio.Pause(); // Pause instead of stopping
         }
         else
         {

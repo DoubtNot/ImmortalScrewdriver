@@ -13,7 +13,7 @@ public class ObjectFloatToPlayer : MonoBehaviour
     public AudioClip audioClip; // Audio clip to play
     private AudioSource audioSource; // Audio source component
     private Rigidbody rb;
-    private bool isStopped = false; // To check if movement is currently stopped
+    private bool isFollowing = true; // Whether the object is currently following the player
     private Coroutine stopMovementCoroutine; // Reference to the active coroutine
 
     void Start()
@@ -29,7 +29,7 @@ public class ObjectFloatToPlayer : MonoBehaviour
 
     void Update()
     {
-        if (isStopped) return; // Skip movement logic if movement is stopped
+        if (!isFollowing) return; // Skip movement logic if not following the target
 
         // Calculate the direction to the player
         Vector3 directionToPlayer = player.position - transform.position;
@@ -61,7 +61,7 @@ public class ObjectFloatToPlayer : MonoBehaviour
         // Check if the collided object has the tag "Bullet"
         if (collision.gameObject.CompareTag("Bullet") && stopMovementCoroutine == null)
         {
-            // Start the coroutine to stop movement and prevent duplicates
+            // Start the coroutine to stop following the target temporarily
             stopMovementCoroutine = StartCoroutine(StopMovementTemporarily(5f));
             speed += speedIncrement; // Increase speed by a small amount with each collision
         }
@@ -69,10 +69,9 @@ public class ObjectFloatToPlayer : MonoBehaviour
 
     private IEnumerator StopMovementTemporarily(float duration)
     {
-        isStopped = true;
-        rb.velocity = Vector3.zero; // Stop movement immediately
+        isFollowing = false; // Stop following the player
         yield return new WaitForSeconds(duration);
-        isStopped = false; // Resume movement after the delay
+        isFollowing = true; // Resume following the player after the delay
         stopMovementCoroutine = null; // Reset coroutine reference, allowing new collisions to start it again
     }
 
@@ -80,5 +79,4 @@ public class ObjectFloatToPlayer : MonoBehaviour
     {
         speed = 0.5f; // Reset speed to its initial value
     }
-
 }

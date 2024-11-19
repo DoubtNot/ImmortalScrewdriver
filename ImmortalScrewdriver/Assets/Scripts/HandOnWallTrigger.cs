@@ -11,6 +11,8 @@ public class HandOnWallTrigger : MonoBehaviour
     public GameObject leftHand;
     public GameObject rightHand;
 
+    public GameObject cameraObject; // Reference to the camera (set in the Inspector)
+
     public InputActionReference leftFlyInputAction; // Input action for left hand fly
     public InputActionReference rightFlyInputAction; // Input action for right hand fly
 
@@ -35,11 +37,19 @@ public class HandOnWallTrigger : MonoBehaviour
         else if (isCollidingWithGrabObject && !isGrabbing && hasEnteredTrigger) // Check if the trigger has been entered
         {
             // Calculate the direction from the hand to the head when the index trigger button is released
-            Vector3 headPosition = Camera.main.transform.position; // Assuming the camera is the head
-            Vector3 handPosition = transform.position; // Get the position of the hand
-            Vector3 directionToHead = headPosition - handPosition; // Calculate the direction from the hand to the head
+            if (cameraObject != null)
+            {
+                Vector3 headPosition = cameraObject.transform.position; // Use the assigned camera's position
+                Vector3 handPosition = transform.position; // Get the position of the hand
+                Vector3 directionToHead = headPosition - handPosition; // Calculate the direction from the hand to the head
 
-            flyScript.ResumeMovementWithDirection(directionToHead); // Move in that direction
+                flyScript.ResumeMovementWithDirection(directionToHead); // Move in that direction
+            }
+            else
+            {
+                Debug.LogWarning("Camera object is not assigned in the Inspector.");
+            }
+
             objectToActivate.SetActive(false); // Deactivate the object
             scriptToToggle.enabled = true; // Enable the specified script
         }
