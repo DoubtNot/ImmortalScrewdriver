@@ -3,6 +3,7 @@ using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 [System.Serializable]
 public class PlaytimeData
@@ -14,6 +15,9 @@ public class TextResponder : MonoBehaviour
 {
     public TextMeshProUGUI inputTextField;  // Reference to the input text field
     public TextMeshProUGUI outputTextField; // Reference to the output text field
+
+    public GameObject videoScreen; // GameObject where videos will be played
+    public List<VideoClip> videoClips; // List of MP4 videos
 
     // References to specific GameObjects to activate
     public GameObject PathBeds;
@@ -29,10 +33,17 @@ public class TextResponder : MonoBehaviour
 
 
     private Dictionary<string, GameObject> pathGameObjects; // Dictionary to map commands to GameObjects
+    private Dictionary<string, VideoClip> videoCommands; // Dictionary to map commands to VideoClips
+
 
     private float startTime; // Store the start time of the game
     private float totalPlaytime; // Store the total playtime
     private string playtimeFilePath; // Path to save the playtime data
+
+    private VideoPlayer videoPlayer; // VideoPlayer component to play videos
+    private MeshRenderer videoScreenRenderer; // MeshRenderer for the video screen
+
+
 
     private void Start()
     {
@@ -44,6 +55,27 @@ public class TextResponder : MonoBehaviour
 
         // Initialize the start time when the game starts
         startTime = Time.time;
+
+        // Initialize the VideoPlayer component
+        videoPlayer = videoScreen.GetComponent<VideoPlayer>();
+        if (videoPlayer == null)
+        {
+            videoPlayer = videoScreen.AddComponent<VideoPlayer>();
+        }
+
+        videoPlayer.playOnAwake = false;
+
+        // Initialize the MeshRenderer and disable it initially
+        videoScreenRenderer = videoScreen.GetComponent<MeshRenderer>();
+        if (videoScreenRenderer != null)
+        {
+            videoScreenRenderer.enabled = false;
+        }
+
+        // Attach event to disable the MeshRenderer when the video finishes
+        videoPlayer.loopPointReached += OnVideoFinished;
+
+
 
         // Initialize the dictionary with command strings and GameObjects
         pathGameObjects = new Dictionary<string, GameObject>
@@ -58,6 +90,12 @@ public class TextResponder : MonoBehaviour
             { "path med bay", PathMedBay },
             { "path storage", PathStorage },
             { "path west dome", PathWestDome }
+        };
+
+        // Initialize the dictionary with command strings and VideoClips
+        videoCommands = new Dictionary<string, VideoClip>
+        {
+            { "recover intro", videoClips[0] }, // Map command to the first video in the list
         };
     }
 
@@ -82,6 +120,11 @@ public class TextResponder : MonoBehaviour
         {
             activeGameObject.SetActive(true);
             outputTextField.text = $"Activated {inputText}";
+        }
+        else if (videoCommands.TryGetValue(inputText, out VideoClip videoClip)) // Check if input matches a video command
+        {
+            PlayVideo(videoClip);
+            outputTextField.text = $"C:Users/Owner>RECOVER {inputText}";
         }
         else
         {
@@ -301,6 +344,30 @@ public class TextResponder : MonoBehaviour
 
         // Clear the input text field after processing
         inputTextField.text = "";
+    }
+
+    private void PlayVideo(VideoClip clip)
+    {
+        videoPlayer.clip = clip;
+        videoPlayer.Play();
+
+        // Enable the video screen renderer
+        if (videoScreenRenderer != null)
+        {
+            videoScreenRenderer.enabled = true;
+        }
+
+        videoScreen.SetActive(true); // Ensure the video screen is visible
+    }
+
+    private void OnVideoFinished(VideoPlayer source)
+    {
+        // Disable the MeshRenderer when the video finishes
+        MeshRenderer meshRenderer = videoScreen.GetComponent<MeshRenderer>();
+        if (meshRenderer != null)
+        {
+            meshRenderer.enabled = false;
+        }
     }
 
     private void SavePlaytime()
