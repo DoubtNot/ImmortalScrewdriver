@@ -139,8 +139,8 @@ public class TextResponder : MonoBehaviour
                 case "cmds":
                     outputTextField.text = "C:Users/Owner>CMDS \n\n" +
                         "CMDS \t\tDisplays a list of available commands \n" +
-                        "DATA \t\tWhen paired with an employee name this command dislays employee info \n" +
-                        "EMPLOYEELIST \tDisplays a list of all employee last names on record\n" +
+                        "DATA \t\tDislays employee identification/information \n" +
+                        "EMPLOYEES \tDisplays a list of all employee last names on record\n" +
                         "HELP \t\tProvides general instructions for using commands \n" +
                         "PATH \t\tDisplays or sets a search path for existing rooms \n" +
                         "RECOVER \tRecovers data from a bad or defective disk \n" +
@@ -158,9 +158,9 @@ public class TextResponder : MonoBehaviour
                         "For a list of every employee last name on record type 'EMPLOYEELIST' and hit Enter";
                     break;
 
-                case "employeelist":
+                case "employees":
                     outputTextField.text = "C:Users/Owner>EMPLOYEELIST \n\n" +
-                        "- Keller \t\t - Sterk \t\t - Ortiz";
+                        "-Delano\t\t- Keller\t\t- Ortiz\t\t-Pruitt\t\t- Sterk\t\t- Vaughn";
                     break;
 
                 case "help":
@@ -215,11 +215,20 @@ public class TextResponder : MonoBehaviour
                 case "time":
                     // Calculate elapsed time since the game started
                     float elapsedTime = Time.time - startTime + totalPlaytime; // Add total playtime from previous sessions
-                    int minutes = Mathf.FloorToInt(elapsedTime / 60);
-                    int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
+                    int days = Mathf.FloorToInt(elapsedTime / 86400); // 1 day = 86400 seconds
+                    elapsedTime %= 86400; // Remaining time after calculating days
+
+                    int hours = Mathf.FloorToInt(elapsedTime / 3600); // 1 hour = 3600 seconds
+                    elapsedTime %= 3600; // Remaining time after calculating hours
+
+                    int minutes = Mathf.FloorToInt(elapsedTime / 60); // 1 minute = 60 seconds
+                    int seconds = Mathf.FloorToInt(elapsedTime % 60); // Remaining seconds
+
                     outputTextField.text = $"C:Users/Owner>TIME \n\n" +
-                                           $"Play Time: {minutes}m {seconds}s";
+                                           $"Play Time: {days}d {hours}h {minutes}m {seconds}s";
                     break;
+
 
                 case "quit":
                     Application.Quit(); // Add a save function here if needed
@@ -288,6 +297,18 @@ public class TextResponder : MonoBehaviour
                 // DATA messages
 
 
+                case "data delano":
+                    outputTextField.text = "C:Users/Owner>DATA DELANO \n\n" +
+                        "- Name: Marcus Delano\n" +
+                        "- Age: 31 \n" +
+                        "- Height: 6'1'' \n" +
+                        "- Weight: 170 lbs \n" +
+                        "- Eye Color: Hazel \n" +
+                        "- Hair Color: Brown \n" +
+                        "- Job Description: Maintenance \n" +
+                        "- Length of Employment: 11 years";
+                    break;
+
                 case "data keller":
                     outputTextField.text = "C:Users/Owner>DATA KELLER \n\n" +
                         "- Name: Dr Robert James Keller\n" +
@@ -298,18 +319,6 @@ public class TextResponder : MonoBehaviour
                         "- Hair Color: Light Brown \n" +
                         "- Job Description: Doctor \n" +
                         "- Length of Employment: 25 years";
-                    break;
-
-                case "data sterk":
-                    outputTextField.text = "C:Users/Owner>DATA STERK \n\n" +
-                        "- Name: Kaika Sterk\n" +
-                        "- Age: 26 \n" +
-                        "- Height: 5'4'' \n" +
-                        "- Weight: 130 lbs \n" +
-                        "- Eye Color: Hazel \n" +
-                        "- Hair Color: Brown \n" +
-                        "- Job Description: Nurse \n" +
-                        "- Length of Employment: 6 Months";
                     break;
 
                 case "data ortiz":
@@ -324,31 +333,77 @@ public class TextResponder : MonoBehaviour
                         "- Length of Employment: 4 Years";
                     break;
 
+                case "data pruitt":
+                    outputTextField.text = "C:Users/Owner>DATA PRUITT \n\n" +
+                        "- Name: Ethan Pruitt\n" +
+                        "- Age: 24 \n" +
+                        "- Height: 5'10'' \n" +
+                        "- Weight: 145 lbs \n" +
+                        "- Eye Color: Blue \n" +
+                        "- Hair Color: Brown \n" +
+                        "- Job Description: Construction \n" +
+                        "- Length of Employment: 3 Months";
+                    break;
+
+                case "data sterk":
+                    outputTextField.text = "C:Users/Owner>DATA STERK \n\n" +
+                        "- Name: Kaika Sterk\n" +
+                        "- Age: 26 \n" +
+                        "- Height: 5'4'' \n" +
+                        "- Weight: 130 lbs \n" +
+                        "- Eye Color: Hazel \n" +
+                        "- Hair Color: Brown \n" +
+                        "- Job Description: Nurse \n" +
+                        "- Length of Employment: 6 Months";
+                    break;
+
+                case "data vaughn":
+                    outputTextField.text = "C:Users/Owner>DATA VAUGHN \n\n" +
+                        "- Name: Tessa Vaughn\n" +
+                        "- Age: 34 \n" +
+                        "- Height: 5'3'' \n" +
+                        "- Weight: 125 lbs \n" +
+                        "- Eye Color: Brown \n" +
+                        "- Hair Color: Blonde \n" +
+                        "- Job Description: First Responder \n" +
+                        "- Length of Employment: 7 Years";
+                    break;
+
 
 
                 // Icident Reports
 
 
 
-                case "report":
-                    outputTextField.text = "C:Users/Owner>REPORT \n\n" +
-                        @"Employee Name: Ethan Pruitt
-
-                          Location: Site Gamma-12, Orbital Construction Zone
-
-                          Incident Overview: At approximately 14:37 station time, Construction Worker Ethan Pruitt 
-                          mishandled a Class-II Dematerializer while attempting to clear debris from the primary 
-                          build zone. During the operation, Worker Pruitt failed to recalibrate the spatial phase 
-                          alignment, resulting in the unintended materialization of his left arm into the outer 
-                          structure of Module 3A.
-
-                          Response: Tessa Vaugh stabilized the patient and led the transport back to the Home Station. 
-                          Upon arrival, Dr Keller assessed the damage and initiated regrowth protocols. A new arm was 
-                          successfully grafted, with full mobility and sensory function expected within 72 hours. 
-                          Worker Pruitt has been briefed on proper Dematerializer operation and will undergo mandatory 
-                          retraining before returning to active duty.";
+                case "french":
+                    outputTextField.text = "C:Users/Owner>FRENCH \n\n" +
+                        "Location: Site Gamma-12, Orbital Construction Zone \n" +
+                        "Incident Overview: At approximately 14:37 station time, Construction Worker Ethan Pruitt mishandled a Class-II " +
+                        "Dematerializer while attempting to clear debris from the primary build zone, resulting in the vaporization of " +
+                        "his left arm.\n" +
+                        "Response: Tessa Vaughn stabilized and transported the patient back to the Home Station. Upon arrival, " +
+                        "Dr Keller assessed the damage and initiated regrowth protocols. A new arm was successfully grafted, with full " +
+                        "mobility and sensory function expected within 72 hours. Pruitt will undergo mandatory retraining before " +
+                        "returning to work.\n" +
+                        "Filed By: Tessa Vaughn\n" +
+                        "Job Title: First Responder";
                     break;
 
+
+                case "layers":
+                    outputTextField.text = "C:Users/Owner>LAYERS \n\n" +
+                        "Location: Home Station \n" +
+                        "Incident Overview: At approximately 22:14 station time, a critical systems alert was triggered in the Home Station " +
+                        "which compromised communications across all subsystems. The failure was due to a recursive feedback loop that overtaxed " +
+                        "the station's processing units. This resulted in intermittent power loss in several non-critical sectors.\n" +
+                        "Response: Maintenance Technician Marcus Delano used the command desk unit to identify that an unauthorized user had " +
+                        "bypassed standard security protocols and had deployed malware within the core systems. Delano isolated the affected " +
+                        "systems and followed the prescribed purging protocol. A sandbox integrity test was performed before reconnecting the " +
+                        "segregated systems. Full functionality was restored by 23:15 station time, and all dependent systems were brought back " +
+                        "online without further issues.\n" +
+                        "Filed By: Marcus Delano\n" +
+                        "Job Title: Maintenance";
+                    break;
 
 
 
