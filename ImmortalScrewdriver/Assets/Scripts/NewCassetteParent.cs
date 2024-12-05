@@ -14,18 +14,31 @@ public class NewCassetteParent : MonoBehaviour
         // Check if there is a child with the tag "Cassette"
         bool hasCassetteChild = false;
 
+        // Loop through all children of the current object
         for (int i = 0; i < transform.childCount; i++)
         {
+            // Check if the child has the tag "Cassette"
             if (transform.GetChild(i).CompareTag("Cassette"))
             {
                 hasCassetteChild = true;
-                break; // Exit the loop if a cassette child is found
+
+                // Get the child object (cassette)
+                Transform cassette = transform.GetChild(i);
+
+                // Relocate the "Cassette" object to the world position of the new location
+                cassette.position = newLocation.position;
+
+                // Match the world rotation of the new location
+                cassette.rotation = newLocation.rotation;
+
+                // No need to break here, because we want to update all cassette children
             }
         }
 
         // Enable or disable the collider based on the presence of a cassette child
         GetComponent<Collider>().enabled = !hasCassetteChild;
     }
+
 
     // OnTriggerEnter is called when the Collider enters the trigger
     private void OnTriggerEnter(Collider other)

@@ -8,6 +8,9 @@ public class KeypadResponder : MonoBehaviour
     public string accessCode = "1234";      // The code required to trigger the animation (set in the Inspector)
     public string animationName = "YourAnimationName"; // The name of the animation to play (set in the Inspector)
 
+    public AudioSource audioSource;         
+    public AudioClip doorAudio;
+
     // Call this method, e.g., on a button click to evaluate the input text
     public void RespondToInput()
     {
@@ -25,6 +28,8 @@ public class KeypadResponder : MonoBehaviour
             {
                 Debug.LogWarning("Animator not assigned or animation name is empty.");
             }
+
+            audioSource.PlayOneShot(doorAudio); // Play the audio clip once
         }
         else
         {

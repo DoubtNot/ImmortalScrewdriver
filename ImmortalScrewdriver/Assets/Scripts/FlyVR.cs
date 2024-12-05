@@ -19,9 +19,6 @@ public class FlyVR : MonoBehaviour
     public float decelerationFactor = 0.9f;
     public float bounceFactor = 0.5f; // How much the player bounces off on collision
 
-    public AudioClip flyingStartClip; // Audio clip to play when flying starts
-    private AudioSource audioSource; // AudioSource component
-
     private bool isLeftFlying = false;
     private bool isRightFlying = false;
     private bool isDecelerating = false;
@@ -37,8 +34,6 @@ public class FlyVR : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = false; // Let Rigidbody handle collisions
-
-        audioSource = gameObject.AddComponent<AudioSource>(); // Add an AudioSource component
 
         leftFlyInputAction.action.Enable();
         rightFlyInputAction.action.Enable();
@@ -79,12 +74,7 @@ public class FlyVR : MonoBehaviour
     void HandleFlying(InputActionReference flyInputAction, GameObject hand, ref bool isFlying, ref Vector3 lastFlyingDirection)
     {
         if (flyInputAction.action.ReadValue<float>() > 0.1f && !isMovementStopped)
-        {
-            if (!isFlying && flyingStartClip != null)
-            {
-                audioSource.PlayOneShot(flyingStartClip); // Play the flying start audio clip
-            }
-
+        {           
             isFlying = true;
 
             // Get the forward direction of the hand

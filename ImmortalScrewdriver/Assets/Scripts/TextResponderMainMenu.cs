@@ -51,7 +51,27 @@ public class TextResponderMainMenu : MonoBehaviour
         // Evaluate the input text and output a response
         switch (inputText)
         {
+            case "cmds":
+                StopVideo();
+                outputTextField.text = "C:Users/Owner>CMDS \n\n" +
+                    "CMDS \t\tDisplays a list of available commands \n" +
+                    "CREDITS \t\tDisplays the development team and contributors \n" +
+                    "START \t\tInitializes a new experimental build \n" +
+                    "WELCOME \tPlays the instructional video for new employees";
+                break;
+
+
+            case "credits":
+                StopVideo();
+                outputTextField.text = "C:/Users/Owner>CREDITS \n\n" +
+                    "DoubtNot\t Models/ Textures/ Codes/ Voice/ Story/ Animation/ Music\n\n" +
+                    "Noelle Anderson\t Voice\n\n" +
+                    "Hunter Busby\t Story\n\n" +
+                    "Josh Rockwood\t Modeled Astronaut Suit";
+                break;
+
             case "start":
+                StopVideo();
                 outputTextField.text = "C:/Users/Owner>START \n" +
                     "Initializing experiment, please wait...";
                 StartCoroutine(MovePlayerAfterDelay(3f)); // Move the player instead of loading a scene
@@ -79,13 +99,14 @@ public class TextResponderMainMenu : MonoBehaviour
                 }
                 break;
 
-            case "play":
+            case "welcome":
                 PlayVideo();
-                outputTextField.text = "C:/Users/Owner>PLAY \n\n" +
+                outputTextField.text = "C:/Users/Owner>WELCOME \n\n" +
                     "Now playing video...";
                 break;
 
             default:
+                StopVideo();
                 outputTextField.text = "C:/Users/Owner>ERROR \n" +
                     "The provided input is not recognized as an internal command, operable path, or recovered file.";
                 break;
@@ -113,7 +134,6 @@ public class TextResponderMainMenu : MonoBehaviour
         if (videoClips.Count > 0)
         {
             videoPlayer.clip = videoClips[0]; // Play the first video in the list (you can modify this logic to play a specific video)
-            videoPlayer.Play();
 
             // Enable the video screen renderer
             if (videoScreenRenderer != null)
@@ -122,8 +142,32 @@ public class TextResponderMainMenu : MonoBehaviour
             }
 
             videoScreen.SetActive(true); // Ensure the video screen is visible
+
+            videoPlayer.Play();
         }
     }
+
+    private void StopVideo()
+    {
+        // Check if the video player is active and playing
+        if (videoPlayer != null && videoPlayer.isPlaying)
+        {
+            videoPlayer.Stop(); // Stop the video playback
+        }
+
+        // Disable the video screen renderer
+        if (videoScreenRenderer != null)
+        {
+            videoScreenRenderer.enabled = false;
+        }
+
+        // Ensure the video screen is no longer visible
+        if (videoScreen != null)
+        {
+            videoScreen.SetActive(false);
+        }
+    }
+
 
     private void OnVideoFinished(VideoPlayer source)
     {

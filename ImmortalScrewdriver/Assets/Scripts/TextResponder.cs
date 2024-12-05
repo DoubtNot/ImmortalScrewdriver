@@ -145,7 +145,6 @@ public class TextResponder : MonoBehaviour
                         "PATH \t\tDisplays or sets a search path for existing rooms \n" +
                         "RECOVER \tRecovers data from a bad or defective disk \n" +
                         "ROOMLIST \tDisplays a list of the common rooms \n" +
-                        "START \t\tStarts a new session for scene.initialescape.apk \n" +
                         "TASKLIST \t\tDisplays a list of all tasks \n" +
                         "TIME \t\tDisplays the system time \n" +
                         "QUIT \t\tEnds and saves current session";
@@ -207,9 +206,9 @@ public class TextResponder : MonoBehaviour
                         "\t-Steering Rod\n" +
                         "\t-Steering Wheel\n" +
                         "\t-Door Handle\n" +
-                        "\t-Keyboard\n" +
-                        "\t-Power Cell * 2\n" +
-                        "Rec0vr FiIeZ * 0"; // Change the number for however many files can be recovered
+                        "\t-Light\n" +
+                        "\t-Power Cell * 2\n\n" +
+                        "Rec0vr FiIeZ * 1"; // Change the number for however many files can be recovered
                     break;
 
                 case "time":
@@ -324,13 +323,13 @@ public class TextResponder : MonoBehaviour
                 case "data ortiz":
                     outputTextField.text = "C:Users/Owner>DATA ORTIZ \n\n" +
                         "- Name: Renata Ortiz\n" +
-                        "- Age: 29 \n" +
-                        "- Height: 5'5'' \n" +
-                        "- Weight: 135 lbs \n" +
-                        "- Eye Color: Red \n" +
-                        "- Hair Color: Black \n" +
-                        "- Job Description: Sanitation \n" +
-                        "- Length of Employment: 4 Years";
+                        "- Age: 26 \n" +
+                        "- Height: 5'4'' \n" +
+                        "- Weight: 130 lbs \n" +
+                        "- Eye Color: Hazel \n" +
+                        "- Hair Color: Brown \n" +
+                        "- Job Description: Nurse \n" +
+                        "- Length of Employment: 6 Months";
                     break;
 
                 case "data pruitt":
@@ -348,13 +347,13 @@ public class TextResponder : MonoBehaviour
                 case "data sterk":
                     outputTextField.text = "C:Users/Owner>DATA STERK \n\n" +
                         "- Name: Kaika Sterk\n" +
-                        "- Age: 26 \n" +
-                        "- Height: 5'4'' \n" +
-                        "- Weight: 130 lbs \n" +
-                        "- Eye Color: Hazel \n" +
-                        "- Hair Color: Brown \n" +
-                        "- Job Description: Nurse \n" +
-                        "- Length of Employment: 6 Months";
+                        "- Age: 29 \n" +
+                        "- Height: 5'5'' \n" +
+                        "- Weight: 135 lbs \n" +
+                        "- Eye Color: Red \n" +
+                        "- Hair Color: Black \n" +
+                        "- Job Description: Sanitation \n" +
+                        "- Length of Employment: 4 Years";
                     break;
 
                 case "data vaughn":
@@ -393,14 +392,12 @@ public class TextResponder : MonoBehaviour
                 case "layers":
                     outputTextField.text = "C:Users/Owner>LAYERS \n\n" +
                         "Location: Home Station \n" +
-                        "Incident Overview: At approximately 22:14 station time, a critical systems alert was triggered in the Home Station " +
+                        "Incident Overview: At approximately 21:06 station time, a critical systems alert was triggered in the Home Station " +
                         "which compromised communications across all subsystems. The failure was due to a recursive feedback loop that overtaxed " +
                         "the station's processing units. This resulted in intermittent power loss in several non-critical sectors.\n" +
-                        "Response: Maintenance Technician Marcus Delano used the command desk unit to identify that an unauthorized user had " +
-                        "bypassed standard security protocols and had deployed malware within the core systems. Delano isolated the affected " +
-                        "systems and followed the prescribed purging protocol. A sandbox integrity test was performed before reconnecting the " +
-                        "segregated systems. Full functionality was restored by 23:15 station time, and all dependent systems were brought back " +
-                        "online without further issues.\n" +
+                        "Response: Maintenance Technician Marcus Delano identified that an unauthorized user had bypassed security protocols " +
+                        "and deployed malware within the core systems. Delano isolated and purged the affected systems. Full functionality was " +
+                        "restored by 23:15. All dependent systems were brought back online after a sandbox integrity test.\n" +
                         "Filed By: Marcus Delano\n" +
                         "Job Title: Maintenance";
                     break;
@@ -504,6 +501,28 @@ public class TextResponder : MonoBehaviour
 
         videoScreen.SetActive(true); // Ensure the video screen is visible
     }
+
+    private void StopVideo()
+    {
+        // Check if the video player is active and playing
+        if (videoPlayer != null && videoPlayer.isPlaying)
+        {
+            videoPlayer.Stop(); // Stop the video playback
+        }
+
+        // Disable the video screen renderer
+        if (videoScreenRenderer != null)
+        {
+            videoScreenRenderer.enabled = false;
+        }
+
+        // Ensure the video screen is no longer visible
+        if (videoScreen != null)
+        {
+            videoScreen.SetActive(false);
+        }
+    }
+
 
     private void OnVideoFinished(VideoPlayer source)
     {
