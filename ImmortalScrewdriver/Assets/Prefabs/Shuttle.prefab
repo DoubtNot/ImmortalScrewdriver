@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5959024160105467487}
   - component: {fileID: 1736237096645933475}
   - component: {fileID: 8664150717206505986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleSteeringBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6182697114475173964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8281949254476023855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorHandlePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 6948070288340925434}
   - component: {fileID: 310761676935078463}
   - component: {fileID: 5180590081409653334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6295263380991702190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 8334929340814198945}
   - component: {fileID: 4299301787561070905}
   - component: {fileID: 371408119958919062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleLight
   m_TagString: ShuttleLight
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2847777379931127512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 7130863015791391862}
   - component: {fileID: 8212132005412531882}
   - component: {fileID: 5248762012153103312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Power1Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 8154802060487860947}
   - component: {fileID: 1864700720883723977}
   - component: {fileID: 4349808832077339508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (7)
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7534153431058829435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleKeyboardPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -839,7 +839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2508600323938775029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,7 +874,7 @@ GameObject:
   - component: {fileID: 3136467921365736538}
   - component: {fileID: 9089045680068059550}
   - component: {fileID: 9195334809746259119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KeyboardTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: 2168567757046816454}
   - component: {fileID: 7014288057828785529}
   - component: {fileID: 1983015550872844731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleDoorHandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3745836078791915606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Power1Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,7 +1107,7 @@ GameObject:
   - component: {fileID: 292305082558350731}
   - component: {fileID: 427035805995834199}
   - component: {fileID: 7311543392037687810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -1211,7 +1211,7 @@ GameObject:
   - component: {fileID: 3531258874025405927}
   - component: {fileID: 2181500880358229122}
   - component: {fileID: 2855636814179321419}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttlePointLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4197609533738465307}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PointLights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 552912139722348045}
   - component: {fileID: 4565717271204493259}
   - component: {fileID: 1909086011292275808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -1469,7 +1469,7 @@ GameObject:
   - component: {fileID: 4471441494512434010}
   - component: {fileID: 944460853936347416}
   - component: {fileID: 6340028883497250595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 1355441912522471859}
   - component: {fileID: 2135244024169707736}
   - component: {fileID: 7545360432519361426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shuttle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,7 +1633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 204301466830879214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Power2Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1667,7 +1667,7 @@ GameObject:
   - component: {fileID: 2350406905235470178}
   - component: {fileID: 4650075817395865032}
   - component: {fileID: 5213637206935958884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -1772,7 +1772,7 @@ GameObject:
   - component: {fileID: 3618309843603043742}
   - component: {fileID: 355458757832504835}
   - component: {fileID: 8261457624861591363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleDoorHandle
   m_TagString: ShuttleDoorHandle
   m_Icon: {fileID: 0}
@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 3007016035617280650}
   - component: {fileID: 693880256958650492}
   - component: {fileID: 1210297684553899298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleKeyboard
   m_TagString: ShuttleKeyboard
   m_Icon: {fileID: 0}
@@ -2290,7 +2290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5855527968423480705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteeringBarPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2325,7 +2325,7 @@ GameObject:
   - component: {fileID: 1280329895297314556}
   - component: {fileID: 7634254802558815844}
   - component: {fileID: 5443939779051171937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Power2Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2443,7 +2443,7 @@ GameObject:
   - component: {fileID: 5101935248406653983}
   - component: {fileID: 8794000897344774243}
   - component: {fileID: 1400053552412264815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttlePointLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2559,7 +2559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7555800295921415910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2592,7 +2592,7 @@ GameObject:
   - component: {fileID: 7553286173173113454}
   - component: {fileID: 769624419079871220}
   - component: {fileID: 2367200308924588868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttlePointLight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2710,7 +2710,7 @@ GameObject:
   - component: {fileID: 457307021460674497}
   - component: {fileID: 2846451549190025671}
   - component: {fileID: 1170372691496319130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2793,7 +2793,7 @@ GameObject:
   - component: {fileID: 7672776758612038169}
   - component: {fileID: 7699196824093233784}
   - component: {fileID: 1748196680152317909}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Assets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2874,7 +2874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7488320888520926875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WindowColliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2917,7 +2917,7 @@ GameObject:
   - component: {fileID: 533101152707458726}
   - component: {fileID: 4922936320285114140}
   - component: {fileID: 3935628111583930137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3037,7 +3037,7 @@ GameObject:
   - component: {fileID: 1712853048020250675}
   - component: {fileID: 4854351475792088346}
   - component: {fileID: 3001628804842167282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BarTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,7 +3156,7 @@ GameObject:
   - component: {fileID: 3490405957304908971}
   - component: {fileID: 1386224341835626680}
   - component: {fileID: 2461033863351015982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3248,7 +3248,7 @@ GameObject:
   - component: {fileID: 6146028206565875381}
   - component: {fileID: 5281435966411079923}
   - component: {fileID: 8395211584522597927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleSteeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3332,7 +3332,7 @@ GameObject:
   - component: {fileID: 4326977367687795068}
   - component: {fileID: 5263456254624572178}
   - component: {fileID: 8476068580258153408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleSteeringWheel
   m_TagString: ShuttleSteeringWheel
   m_Icon: {fileID: 0}
@@ -3593,7 +3593,7 @@ GameObject:
   - component: {fileID: 8582969233976673220}
   - component: {fileID: 6767735892564114525}
   - component: {fileID: 6977443499834401624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -3697,7 +3697,7 @@ GameObject:
   - component: {fileID: 3876866776843077612}
   - component: {fileID: 8444537365020281615}
   - component: {fileID: 5814661862801107061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttlePointLight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3816,7 +3816,7 @@ GameObject:
   - component: {fileID: 5612748520301613288}
   - component: {fileID: 8221103436064517705}
   - component: {fileID: 9096248036599461978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleSteeringBar
   m_TagString: ShuttleSteeringBar
   m_Icon: {fileID: 0}
@@ -4080,7 +4080,7 @@ GameObject:
   - component: {fileID: 5582438355943464517}
   - component: {fileID: 3746111808925356682}
   - component: {fileID: 7299970606786243347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LightTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4255,7 +4255,7 @@ GameObject:
   - component: {fileID: 325427030926249962}
   - component: {fileID: 5921771183135202946}
   - component: {fileID: 503208782862949010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteerinWheelTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4371,7 +4371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2438355409759642619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShuttleLightPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4402,7 +4402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3616657903702356977}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SteeringWheelPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4433,7 +4433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 491603852453160881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4467,7 +4467,7 @@ GameObject:
   - component: {fileID: 5341197709382046141}
   - component: {fileID: 6858372879146471311}
   - component: {fileID: 7629850668513086842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -4570,7 +4570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8374888911223701345}
   - component: {fileID: 9015269712019959593}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shuttle
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -4645,7 +4645,7 @@ GameObject:
   - component: {fileID: 3424391415481514334}
   - component: {fileID: 1586503790574115240}
   - component: {fileID: 3994883805286765790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (6)
   m_TagString: Grab
   m_Icon: {fileID: 0}
@@ -4786,9 +4786,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: -1509960722735470113, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
       propertyPath: m_Name
       value: PowerCell2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
       propertyPath: m_TagString
@@ -5099,9 +5107,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1509960722735470113, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
       propertyPath: m_Name
       value: PowerCell1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2404502269ffeb04bad09b88fc33d3d4, type: 3}
       propertyPath: m_TagString
@@ -5416,9 +5432,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b4b25e765e527e44597195b54462575d, type: 2}
+    - target: {fileID: -3468236834305288235, guid: 0b800076964c6f841b21173a62a1ed24, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b800076964c6f841b21173a62a1ed24, type: 3}
       propertyPath: m_Name
       value: PowerCellHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0b800076964c6f841b21173a62a1ed24, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

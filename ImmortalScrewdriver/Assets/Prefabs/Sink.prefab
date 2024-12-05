@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sink
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
+      propertyPath: m_TagString
+      value: Grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255186633505938192, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4255186633505938192, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
       propertyPath: m_TagString
       value: Grab
@@ -74,6 +86,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8719634716836096766}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 63139584877456801}
     - targetCorrespondingSourceObject: {fileID: 4255186633505938192, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4593538631972241662}
@@ -105,6 +120,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3671124377080654647, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
+--- !u!1 &2629937315116162841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
+  m_PrefabInstance: {fileID: 2935788251543642696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &63139584877456801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629937315116162841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1060815, y: 0.8500228, z: 0.85756725}
+  m_Center: {x: 0, y: 0.42181087, z: -0.07121637}
 --- !u!4 &3401548820360414627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c77862a5ecf4c7a46a4122f0b3435d82, type: 3}
@@ -167,8 +208,16 @@ PrefabInstance:
       value: SinkDoorLeft
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d9094ab780a65204e971a262b94618c4, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9094ab780a65204e971a262b94618c4, type: 3}
       propertyPath: m_TagString
       value: Grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7216002328020369672, guid: d9094ab780a65204e971a262b94618c4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -257,6 +306,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5704831607213174222, guid: 6a0f884b4a822824484b22caf504f7f7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -3270574538460904708, guid: 6a0f884b4a822824484b22caf504f7f7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -264,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6a0f884b4a822824484b22caf504f7f7, type: 3}
       propertyPath: m_Name
       value: SinkDoorRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a0f884b4a822824484b22caf504f7f7, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6a0f884b4a822824484b22caf504f7f7, type: 3}
       propertyPath: m_TagString

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 728968169696748476}
   - component: {fileID: 8072022370502292205}
   - component: {fileID: 8698554883535646653}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (1)
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,9 +117,9 @@ GameObject:
   - component: {fileID: 1343498402562620699}
   - component: {fileID: 5063056838695688600}
   - component: {fileID: 2741516584993113968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (2)
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,9 +222,9 @@ GameObject:
   - component: {fileID: 4353920409190576584}
   - component: {fileID: 2933713601264948994}
   - component: {fileID: 5317843435870064750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (7)
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,9 +327,9 @@ GameObject:
   - component: {fileID: 7484050807839147585}
   - component: {fileID: 5210287400532440710}
   - component: {fileID: 1456751775294367884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (4)
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3557186684607359044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,9 +471,9 @@ GameObject:
   - component: {fileID: 2953878378806083498}
   - component: {fileID: 7995947687278814195}
   - component: {fileID: 8952351475490396222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,9 +576,9 @@ GameObject:
   - component: {fileID: 7599667133673226422}
   - component: {fileID: 8477353887760748069}
   - component: {fileID: 8783139896342367433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (5)
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,9 +681,9 @@ GameObject:
   - component: {fileID: 7374151619969488500}
   - component: {fileID: 3963594134851124470}
   - component: {fileID: 5647611303437034368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (3)
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -786,9 +786,9 @@ GameObject:
   - component: {fileID: 6790056766560851628}
   - component: {fileID: 5757502388013650470}
   - component: {fileID: 5781898964491169636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider (6)
-  m_TagString: Untagged
+  m_TagString: Grab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -927,9 +927,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3225959511443494117, guid: c17c68a1bc14673459502d2871ce8d5b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c17c68a1bc14673459502d2871ce8d5b, type: 3}
       propertyPath: m_Name
       value: Shelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c17c68a1bc14673459502d2871ce8d5b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c17c68a1bc14673459502d2871ce8d5b, type: 3}
+      propertyPath: m_TagString
+      value: Grab
       objectReference: {fileID: 0}
     - target: {fileID: 6124318214771875837, guid: c17c68a1bc14673459502d2871ce8d5b, type: 3}
       propertyPath: m_Materials.Array.data[0]
