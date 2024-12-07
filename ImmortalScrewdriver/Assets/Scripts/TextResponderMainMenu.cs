@@ -57,14 +57,15 @@ public class TextResponderMainMenu : MonoBehaviour
                     "CMDS \t\tDisplays a list of available commands \n" +
                     "CREDITS \t\tDisplays the development team and contributors \n" +
                     "START \t\tInitializes a new experimental build \n" +
-                    "WELCOME \tPlays the instructional video for new employees";
+                    "WELCOME \tPlays the instructional video for new employees \n" +
+                    "QUIT \t\tEnds and saves current session";
                 break;
 
 
             case "credits":
                 StopVideo();
                 outputTextField.text = "C:/Users/Owner>CREDITS \n\n" +
-                    "DoubtNot\t Models/ Textures/ Codes/ Voice/ Story/ Animation/ Music\n\n" +
+                    "DoubtNot\t\t Models/ Textures/ Codes/ Voice/ Story/ Animation/ Music\n\n" +
                     "Noelle Anderson\t Voice\n\n" +
                     "Hunter Busby\t Story\n\n" +
                     "Josh Rockwood\t Modeled Astronaut Suit";
@@ -103,6 +104,10 @@ public class TextResponderMainMenu : MonoBehaviour
                 PlayVideo();
                 outputTextField.text = "C:/Users/Owner>WELCOME \n\n" +
                     "Now playing video...";
+                break;
+
+            case "quit":
+                Application.Quit(); // Add a save function here if needed
                 break;
 
             default:

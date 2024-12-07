@@ -137,6 +137,7 @@ public class TextResponder : MonoBehaviour
 
 
                 case "cmds":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>CMDS \n\n" +
                         "CMDS \t\tDisplays a list of available commands \n" +
                         "DATA \t\tDislays employee identification/information \n" +
@@ -151,6 +152,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "data":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>DATA \n\n" +
                         "<MISSING LAST NAME> \n\n" +
                         "To use the DATA command type 'DATA [employee-last-name]' and hit Enter \n\n" +
@@ -158,17 +160,20 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "employees":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>EMPLOYEELIST \n\n" +
                         "-Delano\t\t- Keller\t\t- Ortiz\t\t-Pruitt\t\t- Sterk\t\t- Vaughn";
                     break;
 
                 case "help":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>HELP \n\n" +
                         "The HELP command provides additional information/instructions on the specified command \n\n" +
                         "To use the HELP command type 'HELP [command-name]' and hit Enter";
                     break;
 
                 case "path":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>PATH \n\n" +
                         "<MISSING ROOM NAME> \n\n" +
                         "To use the PATH command type 'PATH [room-name]' \n\n" +
@@ -176,6 +181,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "recover":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>RECOVER \n\n" +
                         "<MISSING FILE NAME> \n\n" +
                         "To use the RECOVER command type 'RECOVER [file-name]' \n\n" +
@@ -183,6 +189,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "roomlist":
+                    StopVideo();
                     outputTextField.text = "C:/Users/Owner>ROOMLIST \n\n" +
                         "BEDS \n" +
                         "EAST DOME \n" +
@@ -196,11 +203,13 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "start":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>START \n\n" +
                         "This command cannot be called in this location";
                     break;
 
                 case "tasklist":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>TASKLIST \n\n" +
                         "Repair Escape Pod\n" +
                         "\t-Steering Rod\n" +
@@ -212,6 +221,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "time":
+                    StopVideo();
                     // Calculate elapsed time since the game started
                     float elapsedTime = Time.time - startTime + totalPlaytime; // Add total playtime from previous sessions
 
@@ -230,6 +240,7 @@ public class TextResponder : MonoBehaviour
 
 
                 case "quit":
+                    StopVideo();
                     Application.Quit(); // Add a save function here if needed
                     break;
 
@@ -242,11 +253,13 @@ public class TextResponder : MonoBehaviour
 
 
                 case "help cmds":
+                    StopVideo();
                     outputTextField.text = "C:/Users/Owner>HELP CMDS \n\n" +
                         "CMDS \t\tThis command will display a list of the most commonly used command names along with a brief description for each";
                     break;
 
                 case "help data":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>HELP DATA \n\n" +
                         "The Data command provides additional information on a specified employee \n\n" +
                         "To use the DATA command type 'DATA [employee-last-name]' \n\n" +
@@ -254,6 +267,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "help path":
+                    StopVideo();
                     outputTextField.text = "C:/Users/Owner>HELP PATH \n\n" +
                         "PATH \t\tThis command requires a target room name \n\n" +
                         "To use this command type 'PATH [room-name]' \n\n" +
@@ -261,6 +275,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "help recover":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>HELP RECOVER \n\n" +
                         "To use the RECOVER command type 'RECOVER [file-name]' \n\n" +
                         "Currently there are [01] files that may be recovered";
@@ -272,21 +287,25 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "help start":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>HELP START \n\n" +
                         "START \t\tRequires the subject to be in the start location to use";
                     break;
 
                 case "help tasklist":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>HELP TASKLIST \n\n" +
                         "TASKLIST \t\tDisplays a list of objectives to complete in order to escape the space station";
                     break;
 
                 case "help time":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>HELP TIME \n\n" +
                         "TIME \t\tShows the total duration of currrent experiment";
                     break;
 
                 case "help quit":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>HELP QUIT \n\n" +
                         "QUIT \t\tSaves pertinant information of current itteration and closes the application";
                     break;
@@ -297,6 +316,7 @@ public class TextResponder : MonoBehaviour
 
 
                 case "data delano":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>DATA DELANO \n\n" +
                         "- Name: Marcus Delano\n" +
                         "- Age: 31 \n" +
@@ -309,6 +329,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "data keller":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>DATA KELLER \n\n" +
                         "- Name: Dr Robert James Keller\n" +
                         "- Age: 53 \n" +
@@ -321,6 +342,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "data ortiz":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>DATA ORTIZ \n\n" +
                         "- Name: Renata Ortiz\n" +
                         "- Age: 26 \n" +
@@ -333,6 +355,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "data pruitt":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>DATA PRUITT \n\n" +
                         "- Name: Ethan Pruitt\n" +
                         "- Age: 24 \n" +
@@ -345,6 +368,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "data sterk":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>DATA STERK \n\n" +
                         "- Name: Kaika Sterk\n" +
                         "- Age: 29 \n" +
@@ -357,6 +381,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "data vaughn":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>DATA VAUGHN \n\n" +
                         "- Name: Tessa Vaughn\n" +
                         "- Age: 34 \n" +
@@ -375,6 +400,7 @@ public class TextResponder : MonoBehaviour
 
 
                 case "french":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>FRENCH \n\n" +
                         "Location: Site Gamma-12, Orbital Construction Zone \n" +
                         "Incident Overview: At approximately 14:37 station time, Construction Worker Ethan Pruitt mishandled a Class-II " +
@@ -390,6 +416,7 @@ public class TextResponder : MonoBehaviour
 
 
                 case "layers":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>LAYERS \n\n" +
                         "Location: Home Station \n" +
                         "Incident Overview: At approximately 21:06 station time, a critical systems alert was triggered in the Home Station " +
@@ -409,6 +436,7 @@ public class TextResponder : MonoBehaviour
 
 
                 case "frog":
+                    StopVideo();
                     outputTextField.text = @"
                       @..@
                      (----)
@@ -417,6 +445,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "cat":
+                    StopVideo();
                     outputTextField.text = @"
                      /\_/\  
                     ( o.o )
@@ -424,6 +453,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "dog":
+                    StopVideo();
                     outputTextField.text = @"
                          / \__
                         (    @\____
@@ -433,12 +463,14 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "fish":
+                    StopVideo();
                     outputTextField.text = @"
                        ><(((('>
                       ><(((('>";
                     break;
 
                 case "duck":
+                    StopVideo();
                     outputTextField.text = @"
                           __
                     <(o )___
@@ -447,6 +479,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "bunny":
+                    StopVideo();
                     outputTextField.text = @"
                      (\(\ 
                     ( -.-)
@@ -454,6 +487,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "elephant":
+                    StopVideo();
                     outputTextField.text = @"
                       /  \~~~/  \
                      (    ..     )
@@ -463,6 +497,7 @@ public class TextResponder : MonoBehaviour
                     break;
 
                 case "sixty nine":
+                    StopVideo();
                     outputTextField.text = "C:Users/Owner>SIXTY NINE \n\n" +
                         "Heh nice!";
                     break;
@@ -474,6 +509,8 @@ public class TextResponder : MonoBehaviour
 
                 // Error Message
                 default:
+
+                    StopVideo();
                     outputTextField.text = "C:/Users/Owner>ERROR \n\n" +
                         "The provided input is not recognized as an internal command, operable path or recovered file.";
                     break;
