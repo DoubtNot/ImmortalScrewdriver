@@ -65,10 +65,10 @@ public class TextResponderMainMenu : MonoBehaviour
             case "credits":
                 StopVideo();
                 outputTextField.text = "C:/Users/Owner>CREDITS \n\n" +
-                    "DoubtNot\t\t Models/ Textures/ Codes/ Voice/ Story/ Animation/ Music\n\n" +
+                    "DoubtNot\t\t\t Models/ Textures/ Codes/ Voice/ Story/ Animation/ Music\n\n" +
                     "Noelle Anderson\t Voice\n\n" +
-                    "Hunter Busby\t Story\n\n" +
-                    "Josh Rockwood\t Modeled Astronaut Suit";
+                    "Hunter Busby\t\t Story\n\n" +
+                    "Josh Rockwood\t\t Modeled Astronaut Suit";
                 break;
 
             case "start":

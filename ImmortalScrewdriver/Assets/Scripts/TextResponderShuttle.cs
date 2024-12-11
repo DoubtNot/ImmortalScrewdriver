@@ -82,7 +82,7 @@ public class TextResponderShuttle : MonoBehaviour
                 break;
 
             case "gold":
-                outputTextField.text = "C:/Users/Owner>GOLD LAUNCH \n\n" +
+                outputTextField.text = "C:/Users/Owner>GOLD\n\n" +
                         "Launch sequence initiated, please stand by...";
 
                 if (animator != null && !string.IsNullOrEmpty(doorClose))
@@ -126,7 +126,7 @@ public class TextResponderShuttle : MonoBehaviour
         audioSource.PlayOneShot(doorAudio); // Play the audio clip once
 
         // Wait for 5 seconds before performing the rest of the actions
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(20);
 
         // Play the door open animation
         if (!string.IsNullOrEmpty(doorOpen))
