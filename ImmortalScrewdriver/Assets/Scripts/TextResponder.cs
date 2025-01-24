@@ -96,6 +96,7 @@ public class TextResponder : MonoBehaviour
         videoCommands = new Dictionary<string, VideoClip>
         {
             { "recover intro", videoClips[0] }, // Map command to the first video in the list
+            { "recover first", videoClips[1] },
         };
     }
 
